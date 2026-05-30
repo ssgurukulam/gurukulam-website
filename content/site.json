@@ -1,0 +1,32 @@
+{
+  "name": "Shoonya Shikhar Gurukulam",
+  "tagline": "Where Ancient Wisdom Meets Modern Learning",
+  "description": "A traditional Indian Gurukulam dedicated to holistic education through Yoga, Meditation, Martial Arts, Sanskrit, and Modern Sciences.",
+  "founded": "1985",
+  "location": {
+    "address": "Himalayan Foothills, Rishikesh",
+    "city": "Rishikesh",
+    "state": "Uttarakhand",
+    "country": "India",
+    "pincode": "249201"
+  },
+  "contact": {
+    "phone": "+91 9876 543 210",
+    "email": "info@srividyagurukulam.edu.in",
+    "whatsapp": "+91 9876 543 210"
+  },
+  "social": {
+    "facebook": "https://facebook.com/srividyagurukulam",
+    "instagram": "https://instagram.com/srividyagurukulam",
+    "youtube": "https://youtube.com/srividyagurukulam",
+    "twitter": "https://twitter.com/srividyagurukul"
+  },
+  "stats": {
+    "yearsOfExcellence": 40,
+    "studentsGraduated": 5000,
+    "gurus": 25,
+    "campusAcres": 50
+  },
+  "vision": "To nurture individuals who embody the wisdom of ancient Indian traditions while being equipped to contribute meaningfully to the modern world.",
+  "mission": "To provide a holistic education that integrates spiritual growth, physical discipline, intellectual development, and moral values in a serene and nurturing environment."
+}

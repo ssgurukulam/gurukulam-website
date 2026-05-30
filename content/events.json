@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Guru Purnima Celebration",
+    "date": "2026-07-11",
+    "time": "6:00 AM - 9:00 PM",
+    "description": "Join us for the sacred celebration honoring our Gurus with traditional ceremonies, satsang, and cultural programs.",
+    "type": "Festival",
+    "image": "/images/events/guru-purnima.jpg"
+  },
+  {
+    "id": 2,
+    "title": "10-Day Vipassana Retreat",
+    "date": "2026-08-01",
+    "time": "Silent Retreat",
+    "description": "An intensive silent meditation retreat following the ancient Vipassana tradition. Limited seats available.",
+    "type": "Retreat",
+    "image": "/images/events/vipassana.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Annual Convocation Ceremony",
+    "date": "2026-09-15",
+    "time": "10:00 AM",
+    "description": "Celebrate the graduation of our students with traditional ceremonies, performances, and blessings from our Gurus.",
+    "type": "Ceremony",
+    "image": "/images/events/convocation.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Navaratri Cultural Festival",
+    "date": "2026-10-01",
+    "time": "6:00 AM - 10:00 PM",
+    "description": "Nine nights of devotion, dance, music, and celebration. Special pujas and cultural programs throughout.",
+    "type": "Festival",
+    "image": "/images/events/navaratri.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Yoga Teacher Training Begins",
+    "date": "2026-07-01",
+    "time": "New Batch",
+    "description": "New batch of our certified 500-hour Yoga Teacher Training program. Applications now open.",
+    "type": "Course",
+    "image": "/images/events/yoga-training.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Sanskrit Summer Camp",
+    "date": "2026-06-15",
+    "time": "2 Weeks",
+    "description": "Intensive Sanskrit learning camp for beginners and intermediate learners. Residential program available.",
+    "type": "Camp",
+    "image": "/images/events/sanskrit-camp.jpg"
+  }
+]

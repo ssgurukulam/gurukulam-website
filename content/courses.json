@@ -1,0 +1,130 @@
+[
+  {
+    "id": "yoga",
+    "title": "Yoga & Pranayama",
+    "shortDescription": "Master the ancient art of yoga for physical, mental, and spiritual well-being.",
+    "description": "Our comprehensive yoga program covers Hatha Yoga, Ashtanga Yoga, Pranayama, and meditation techniques. Students learn the philosophical foundations alongside physical practice.",
+    "icon": "lotus",
+    "duration": "2-4 years",
+    "highlights": [
+      "Classical Hatha Yoga",
+      "Ashtanga Vinyasa",
+      "Pranayama & Breathing",
+      "Yoga Philosophy",
+      "Teaching Methodology"
+    ],
+    "image": "/images/yoga.jpg"
+  },
+  {
+    "id": "meditation",
+    "title": "Meditation & Dhyana",
+    "shortDescription": "Discover inner peace through ancient meditation techniques and mindfulness practices.",
+    "description": "Explore various meditation traditions including Vipassana, Transcendental Meditation, and Vedantic contemplation. Learn to cultivate stillness and clarity of mind.",
+    "icon": "meditation",
+    "duration": "1-3 years",
+    "highlights": [
+      "Vipassana Meditation",
+      "Mantra Meditation",
+      "Mindfulness Practice",
+      "Contemplative Studies",
+      "Silent Retreats"
+    ],
+    "image": "/images/meditation.jpg"
+  },
+  {
+    "id": "martial-arts",
+    "title": "Martial Arts",
+    "shortDescription": "Train in traditional Indian martial arts including Kalaripayattu and self-defense.",
+    "description": "Learn the ancient Indian martial art of Kalaripayattu along with weapons training, self-defense, and physical conditioning that builds discipline and inner strength.",
+    "icon": "sword",
+    "duration": "3-5 years",
+    "highlights": [
+      "Kalaripayattu",
+      "Weapons Training",
+      "Self-Defense",
+      "Physical Conditioning",
+      "Discipline Training"
+    ],
+    "image": "/images/martial-arts.jpg"
+  },
+  {
+    "id": "sanskrit",
+    "title": "Sanskrit & Vedic Studies",
+    "shortDescription": "Master the sacred language of Sanskrit and study ancient Vedic scriptures.",
+    "description": "Comprehensive Sanskrit education from basics to advanced literature. Study Vedas, Upanishads, Bhagavad Gita, and classical Sanskrit texts in their original form.",
+    "icon": "book",
+    "duration": "4-6 years",
+    "highlights": [
+      "Sanskrit Grammar",
+      "Vedic Chanting",
+      "Scripture Study",
+      "Classical Literature",
+      "Composition & Poetry"
+    ],
+    "image": "/images/sanskrit.jpg"
+  },
+  {
+    "id": "computer-education",
+    "title": "Computer Education",
+    "shortDescription": "Modern technology education balanced with traditional values and ethics.",
+    "description": "Learn programming, digital literacy, and modern technology skills while maintaining ethical awareness and mindful use of technology.",
+    "icon": "computer",
+    "duration": "2-3 years",
+    "highlights": [
+      "Programming Basics",
+      "Digital Literacy",
+      "Ethical Technology",
+      "Web Development",
+      "Computer Science"
+    ],
+    "image": "/images/computer.jpg"
+  },
+  {
+    "id": "moral-education",
+    "title": "Moral & Traditional Education",
+    "shortDescription": "Character development through timeless values and ethical principles.",
+    "description": "Foundation courses in Indian ethics, dharma, and character building. Students learn through stories, discussions, and practical application of moral principles.",
+    "icon": "heart",
+    "duration": "Ongoing",
+    "highlights": [
+      "Ethics & Dharma",
+      "Character Building",
+      "Value Education",
+      "Story Traditions",
+      "Community Service"
+    ],
+    "image": "/images/moral.jpg"
+  },
+  {
+    "id": "personality-development",
+    "title": "Personality Development",
+    "shortDescription": "Build confidence, communication skills, and leadership qualities.",
+    "description": "Holistic personality development program focusing on public speaking, leadership, emotional intelligence, and interpersonal skills rooted in Indian wisdom.",
+    "icon": "star",
+    "duration": "1-2 years",
+    "highlights": [
+      "Public Speaking",
+      "Leadership Skills",
+      "Emotional Intelligence",
+      "Communication",
+      "Self-Confidence"
+    ],
+    "image": "/images/personality.jpg"
+  },
+  {
+    "id": "spiritual-learning",
+    "title": "Spiritual Learning",
+    "shortDescription": "Deep spiritual education in philosophy, rituals, and inner transformation.",
+    "description": "Advanced spiritual curriculum covering Indian philosophy, ritual practices, temple traditions, and the path to self-realization under guidance of experienced Gurus.",
+    "icon": "flame",
+    "duration": "Lifelong",
+    "highlights": [
+      "Philosophy Studies",
+      "Ritual Practices",
+      "Satsang & Discourses",
+      "Pilgrimage Studies",
+      "Inner Transformation"
+    ],
+    "image": "/images/spiritual.jpg"
+  }
+]

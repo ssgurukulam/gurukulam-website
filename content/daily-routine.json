@@ -1,0 +1,62 @@
+[
+  {
+    "time": "4:30 AM",
+    "activity": "Brahma Muhurta",
+    "description": "Wake up during the auspicious time for spiritual practice"
+  },
+  {
+    "time": "5:00 AM",
+    "activity": "Meditation & Prayers",
+    "description": "Morning meditation and traditional prayers"
+  },
+  {
+    "time": "6:00 AM",
+    "activity": "Yoga & Pranayama",
+    "description": "Physical practice and breathing exercises"
+  },
+  {
+    "time": "7:30 AM",
+    "activity": "Breakfast",
+    "description": "Sattvic vegetarian meal"
+  },
+  {
+    "time": "8:30 AM",
+    "activity": "Academic Classes",
+    "description": "Sanskrit, Vedic studies, and modern subjects"
+  },
+  {
+    "time": "12:30 PM",
+    "activity": "Lunch & Rest",
+    "description": "Midday meal and quiet time"
+  },
+  {
+    "time": "2:30 PM",
+    "activity": "Practical Training",
+    "description": "Martial arts, computer classes, or skill development"
+  },
+  {
+    "time": "5:00 PM",
+    "activity": "Evening Yoga",
+    "description": "Gentle yoga and relaxation practice"
+  },
+  {
+    "time": "6:00 PM",
+    "activity": "Sandhya Vandana",
+    "description": "Evening prayers and rituals"
+  },
+  {
+    "time": "7:00 PM",
+    "activity": "Dinner",
+    "description": "Light evening meal"
+  },
+  {
+    "time": "8:00 PM",
+    "activity": "Satsang & Study",
+    "description": "Group discussions, self-study, or cultural activities"
+  },
+  {
+    "time": "9:30 PM",
+    "activity": "Rest",
+    "description": "Lights out for proper rest"
+  }
+]

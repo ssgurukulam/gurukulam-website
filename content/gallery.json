@@ -1,0 +1,75 @@
+{
+  "channelUrl": "https://www.youtube.com/@ShoonyaShikharGurukulam",
+  "categories": [
+    {
+      "id": "campus",
+      "en": { "name": "Campus Life" },
+      "hi": { "name": "परिसर जीवन" },
+      "images": [
+        {
+          "id": "c1",
+          "type": "image",
+          "src": "https://res.cloudinary.com/dgzi1ruvs/image/upload/v1780139966/campus_outside_ct1ej1.jpg",
+          "en": "Main Temple",
+          "hi": "मुख्य मंदिर"
+        },
+        {
+          "id": "c2",
+          "type": "video",
+          "src": "https://res.cloudinary.com/your-cloud/video/upload/v1234/gallery/campus/drone-tour.mp4",
+          "en": "Campus Drone Tour",
+          "hi": "परिसर ड्रोन टूर"
+        }
+      ]
+    },
+    {
+      "id": "yoga",
+      "en": { "name": "Yoga & Meditation" },
+      "hi": { "name": "योग और ध्यान" },
+      "images": [
+        {
+          "id": "y1",
+          "type": "image",
+          "src": "https://res.cloudinary.com/your-cloud/image/upload/v1234/gallery/yoga/morning-asana.jpg",
+          "en": "Morning Yoga",
+          "hi": "प्रातःकालीन योग"
+        },
+        {
+          "id": "y2",
+          "type": "video",
+          "src": "https://res.cloudinary.com/dgzi1ruvs/video/upload/satsang_video1_yi1fss.mp4",
+          "en": "Dhyan Sadhana Guide",
+          "hi": "ध्यान साधना मार्गदर्शन"
+        }
+      ]
+    },
+    {
+      "id": "martial-arts",
+      "en": { "name": "Martial Arts" },
+      "hi": { "name": "मार्शल आर्ट" },
+      "images": [
+        {
+          "id": "m1",
+          "type": "image",
+          "src": "https://res.cloudinary.com/your-cloud/image/upload/v1234/gallery/martial/kalaripayattu.jpg",
+          "en": "Self Defense Practice",
+          "hi": "आत्मरक्षा अभ्यास"
+        }
+      ]
+    },
+    {
+      "id": "festivals",
+      "en": { "name": "Celebrations" },
+      "hi": { "name": "उत्सव एवं पर्व" },
+      "images": [
+        {
+          "id": "f1",
+          "type": "image",
+          "src": "https://res.cloudinary.com/your-cloud/image/upload/v1234/gallery/festivals/gurupurnima.jpg",
+          "en": "Guru Purnima Utsav",
+          "hi": "गुरु पूर्णिमा उत्सव"
+        }
+      ]
+    }
+  ]
+}

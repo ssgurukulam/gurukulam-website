@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Rahul Mehta",
+    "role": "Software Engineer, Now Yoga Teacher",
+    "text": "Shoonya Shikhar Gurukulam transformed my life completely. I came as a stressed corporate employee and left as a certified yoga teacher with inner peace I never thought possible.",
+    "image": "/images/testimonials/student-1.jpg",
+    "year": "Batch of 2020"
+  },
+  {
+    "id": 2,
+    "name": "Priya Sharma",
+    "role": "Sanskrit Scholar",
+    "text": "The depth of Sanskrit education here is unmatched. Learning from Acharya Krishna ji opened the doors to our ancient scriptures in ways I never imagined.",
+    "image": "/images/testimonials/student-2.jpg",
+    "year": "Batch of 2018"
+  },
+  {
+    "id": 3,
+    "name": "Arjun Reddy",
+    "role": "Martial Arts Instructor",
+    "text": "The Kalaripayattu training here is authentic and rigorous. Master Arjun taught me not just fighting techniques, but the discipline and philosophy behind the ancient art.",
+    "image": "/images/testimonials/student-3.jpg",
+    "year": "Batch of 2019"
+  },
+  {
+    "id": 4,
+    "name": "Meera Krishnan",
+    "role": "Meditation Guide",
+    "text": "Five years at the Gurukulam gave me tools for life. The meditation practices I learned here continue to guide me and those I now teach.",
+    "image": "/images/testimonials/student-4.jpg",
+    "year": "Batch of 2017"
+  },
+  {
+    "id": 5,
+    "name": "Vikram Singh",
+    "role": "Tech Entrepreneur",
+    "text": "The unique combination of computer education with traditional values prepared me perfectly for the modern world while keeping me grounded in our culture.",
+    "image": "/images/testimonials/student-5.jpg",
+    "year": "Batch of 2021"
+  },
+  {
+    "id": 6,
+    "name": "Anjali Desai",
+    "role": "School Principal",
+    "text": "The moral and personality development curriculum here shaped me into a confident leader. I now apply these teachings in my own educational institution.",
+    "image": "/images/testimonials/student-6.jpg",
+    "year": "Batch of 2015"
+  }
+]
