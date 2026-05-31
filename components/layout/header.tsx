@@ -23,7 +23,7 @@ const navItems = [
   { name: "Curriculum", href: "/curriculum" },
   { name: "Teachers", href: "/teachers" },
   { name: "Gallery", href: "/gallery" },
-  { name: "Events", href: "/events" },
+  // { name: "Events", href: "/events" },
   { name: "Testimonials", href: "/testimonials" },
   { name: "Admissions", href: "/admissions" },
   { name: "Contact", href: "/contact" },

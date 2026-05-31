@@ -4,7 +4,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { FloatingAssistant } from "@/components/ui/floating-assistant";
-import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -92,7 +91,7 @@ export default function RootLayout({
           <Footer />
           <FloatingAssistant />
         </ThemeProvider>
-        {process.env.NODE_ENV === "production" && <Analytics />}
+        {process.env.NODE_ENV === "production"}
       </body>
     </html>
   );

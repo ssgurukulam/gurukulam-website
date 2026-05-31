@@ -9,16 +9,34 @@
         {
           "id": "c1",
           "type": "image",
+          "showOnHero": true,
           "src": "https://res.cloudinary.com/dgzi1ruvs/image/upload/v1780139966/campus_outside_ct1ej1.jpg",
           "en": "Main Temple",
           "hi": "मुख्य मंदिर"
         },
         {
-          "id": "c2",
+          "id": "hero-1",
+          "type": "image",
+          "showOnHero": true,
+          "src": "https://res.cloudinary.com/dgzi1ruvs/image/upload/v1780139976/news_channel_banner_with_students_tfho1b.jpg",
+          "en": "Gurukulam Students News Channel Feature",
+          "hi": "गुरुकुल छात्र समाचार चैनल विशेष प्रसारण"
+        },
+        {
+          "id": "hero-2",
+          "type": "image",
+          "showOnHero": true,
+          "src": "https://res.cloudinary.com/dgzi1ruvs/image/upload/v1780139977/banner_with_students_axuv4u.jpg",
+          "en": "Traditional Education Campus Banner",
+          "hi": "पारंपरिक शिक्षा परिसर मुख्य बैनर"
+        },
+        {
+          "id": "c5",
           "type": "video",
-          "src": "https://res.cloudinary.com/your-cloud/video/upload/v1234/gallery/campus/drone-tour.mp4",
-          "en": "Campus Drone Tour",
-          "hi": "परिसर ड्रोन टूर"
+          "showOnHero": true,
+          "src": "https://res.cloudinary.com/dgzi1ruvs/video/upload/students_in_temple_video_twlwom.mp4",
+          "en": "Students Inner Temple Contemplation",
+          "hi": "मुख्य मंदिर परिसर में ध्यानमग्न विद्यार्थी"
         }
       ]
     },
@@ -28,18 +46,19 @@
       "hi": { "name": "योग और ध्यान" },
       "images": [
         {
-          "id": "y1",
-          "type": "image",
-          "src": "https://res.cloudinary.com/your-cloud/image/upload/v1234/gallery/yoga/morning-asana.jpg",
-          "en": "Morning Yoga",
-          "hi": "प्रातःकालीन योग"
-        },
-        {
           "id": "y2",
           "type": "video",
           "src": "https://res.cloudinary.com/dgzi1ruvs/video/upload/satsang_video1_yi1fss.mp4",
           "en": "Dhyan Sadhana Guide",
           "hi": "ध्यान साधना मार्गदर्शन"
+        },
+        {
+          "id": "y3",
+          "type": "image",
+          "showOnHero": true,
+          "src": "https://res.cloudinary.com/dgzi1ruvs/image/upload/v1780139968/stasang1_ltlkyu.jpg",
+          "en": "Satsang & Traditional Wisdom Assembly",
+          "hi": "सत्संग एवं पारंपरिक ज्ञान सभा"
         }
       ]
     },
@@ -68,6 +87,22 @@
           "src": "https://res.cloudinary.com/your-cloud/image/upload/v1234/gallery/festivals/gurupurnima.jpg",
           "en": "Guru Purnima Utsav",
           "hi": "गुरु पूर्णिमा उत्सव"
+        },
+        {
+          "id": "f2",
+          "type": "image",
+          "showOnHero": true,
+          "src": "https://res.cloudinary.com/dgzi1ruvs/image/upload/v1780139967/inauguration1_ksuhvo.jpg",
+          "en": "Gurukulam Campus Inauguration Ceremony",
+          "hi": "गुरुकुलम् परिसर उद्घाटन पावन समारोह"
+        },
+        {
+          "id": "f3",
+          "type": "video",
+          "showOnHero": true,
+          "src": "https://res.cloudinary.com/dgzi1ruvs/video/upload/youtube_news_channel_video_tupmem.mp4",
+          "en": "Official Media News Coverage",
+          "hi": "आधिकारिक मीडिया समाचार कवेरेज"
         }
       ]
     }
