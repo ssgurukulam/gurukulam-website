@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import { ArrowRight, Flower2, Brain, Sword, BookOpen, Monitor, Heart, Star, Flame } from 'lucide-react'
 import { Section, SectionHeader, StaggerContainer, staggerItem } from '@/components/ui/section'
 import { Button } from '@/components/ui/button'
-import courses from '@/content/courses.json'
+import curriculum from '@/content/curriculum.json'
 
 const iconMap: Record<string, React.ElementType> = {
   lotus: Flower2,
@@ -18,9 +18,9 @@ const iconMap: Record<string, React.ElementType> = {
   flame: Flame,
 }
 
-export function CoursesSection() {
+export function CurriculumSection() {
   return (
-    <Section id="courses">
+    <Section id="curriculum">
       <SectionHeader
         badge="Our Curriculum"
         title="Paths of Learning"
@@ -28,7 +28,7 @@ export function CoursesSection() {
       />
 
       <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {courses.slice(0, 8).map((course) => {
+        {curriculum.slice(0, 8).map((course) => {
           const Icon = iconMap[course.icon] || Flower2
           return (
             <motion.div
@@ -36,7 +36,7 @@ export function CoursesSection() {
               variants={staggerItem}
               className="group"
             >
-              <Link href={`/courses#${course.id}`}>
+              <Link href={`/curriculum#${course.id}`}>
                 <div className="h-full p-6 bg-card rounded-2xl border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300">
                   <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                     <Icon className="w-7 h-7 text-primary" />
@@ -59,9 +59,9 @@ export function CoursesSection() {
       </StaggerContainer>
 
       <div className="mt-12 text-center">
-        <Link href="/courses">
+        <Link href="/curriculum">
           <Button variant="outline" size="lg" className="gap-2 border-primary/30 hover:bg-primary/5">
-            View All Courses
+            View Curriculum Details
             <ArrowRight className="w-4 h-4" />
           </Button>
         </Link>

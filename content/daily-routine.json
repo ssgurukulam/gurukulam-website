@@ -22,7 +22,7 @@
   {
     "time": "8:30 AM",
     "activity": "Academic Classes",
-    "description": "Sanskrit, Vedic studies, and modern subjects"
+    "description": "Study according to modern education pattern"
   },
   {
     "time": "12:30 PM",
@@ -36,8 +36,8 @@
   },
   {
     "time": "5:00 PM",
-    "activity": "Evening Yoga",
-    "description": "Gentle yoga and relaxation practice"
+    "activity": "Self Analysis",
+    "description": "Gentle time for yourself to do self introspection"
   },
   {
     "time": "6:00 PM",
@@ -51,11 +51,11 @@
   },
   {
     "time": "8:00 PM",
-    "activity": "Satsang & Study",
+    "activity": "Self Study",
     "description": "Group discussions, self-study, or cultural activities"
   },
   {
-    "time": "9:30 PM",
+    "time": "11:00 PM",
     "activity": "Rest",
     "description": "Lights out for proper rest"
   }

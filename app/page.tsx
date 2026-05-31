@@ -1,6 +1,5 @@
 import { HeroSection } from "@/components/sections/hero-section";
 import { IntroSection } from "@/components/sections/intro-section";
-import { CoursesSection } from "@/components/sections/courses-section";
 import { WhyChooseSection } from "@/components/sections/why-choose-section";
 import { DailyLifeSection } from "@/components/sections/daily-life-section";
 import { TeachersSection } from "@/components/sections/teachers-section";
@@ -9,6 +8,7 @@ import { TestimonialsSection } from "@/components/sections/testimonials-section"
 import { GallerySection } from "@/components/sections/gallery-section";
 import { CTASection } from "@/components/sections/cta-section";
 import { cookies } from "next/headers";
+import { CurriculumSection } from "@/components/sections/curriculum-section";
 
 export default async function HomePage() {
   const cookieStore = await cookies();
@@ -17,16 +17,15 @@ export default async function HomePage() {
 
   return (
     <>
-      <HeroSection />
-      <IntroSection />
-      <CoursesSection />
-      <WhyChooseSection />
-      <DailyLifeSection />
+      <HeroSection language={language} />
       <TeachersSection language={language} />
-      <EventsSection />
-      <TestimonialsSection />
       <GallerySection language={language} />
-      <CTASection />
+      <IntroSection language={language} />
+      <WhyChooseSection />
+      <CurriculumSection />
+      <DailyLifeSection />
+      <TestimonialsSection />
+      <CTASection language={language} />
     </>
   );
 }

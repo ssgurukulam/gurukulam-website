@@ -114,7 +114,7 @@ export default function AboutPage() {
       </Section>
 
       {/* Timeline */}
-      <Section>
+      {/* <Section>
         <SectionHeader
           badge="Our Journey"
           title="Milestones"
@@ -181,25 +181,23 @@ export default function AboutPage() {
             </FadeIn>
           ))}
         </div>
-      </Section>
+      </Section> */}
 
       {/* Campus */}
       <Section className="bg-card">
         <SectionHeader
           badge="Our Campus"
           title="A Sacred Learning Space"
-          subtitle="50 acres of serene environment designed for holistic education."
+          subtitle="3 storied campus building"
         />
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             { name: "Main Temple", desc: "Heart of spiritual activities" },
-            { name: "Meditation Halls", desc: "3 halls for silent practice" },
-            { name: "Yoga Shalas", desc: "4 dedicated yoga spaces" },
-            { name: "Sanskrit Library", desc: "10,000+ manuscripts" },
+            { name: "Meditation Halls", desc: "Hall for silent practice" },
             { name: "Computer Lab", desc: "Modern tech facilities" },
             { name: "Dining Hall", desc: "Sattvic vegetarian meals" },
-            { name: "Guest House", desc: "For visiting scholars" },
-            { name: "Gardens", desc: "Organic herbs & vegetables" },
+            { name: "Guest House", desc: "For visiting scholars or parents" },
+            { name: "Garden", desc: "Playground and rest time place" },
           ].map((facility) => (
             <FadeIn key={facility.name}>
               <div className="p-6 bg-background rounded-xl border border-border text-center">
@@ -213,7 +211,7 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <CTASection />
+      <CTASection language="en" />
     </>
   );
 }

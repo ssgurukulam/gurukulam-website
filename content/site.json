@@ -1,32 +1,59 @@
 {
-  "name": "Shoonya Shikhar Gurukulam",
-  "tagline": "Where Ancient Wisdom Meets Modern Learning",
-  "description": "A traditional Indian Gurukulam dedicated to holistic education through Yoga, Meditation, Martial Arts, Sanskrit, and Modern Sciences.",
-  "founded": "1985",
+  "name": {
+    "en": "Shoonya Shikhar Gurukulam",
+    "hi": "शून्य शिखर गुरुकुलम्"
+  },
+  "tagline": {
+    "en": "Where Ancient Wisdom Meets Modern Learning",
+    "hi": "जहाँ प्राचीन ज्ञान और आधुनिक शिक्षा का मिलन होता है"
+  },
+  "description": {
+    "en": "A traditional Indian Gurukulam dedicated to holistic education through Yoga, Meditation, Martial Arts, Sanskrit, and Modern Sciences.",
+    "hi": "योग, ध्यान, मार्शल आर्ट, संस्कृत और आधुनिक विज्ञान के माध्यम से समग्र शिक्षा को समर्पित एक पारंपरिक भारतीय गुरुकुल।"
+  },
+  "founded": "2024",
   "location": {
-    "address": "Himalayan Foothills, Rishikesh",
-    "city": "Rishikesh",
-    "state": "Uttarakhand",
-    "country": "India",
-    "pincode": "249201"
+    "address": {
+      "en": "Opposite Oxford School, Near Agrasen College, Vajna Kalan, Hindaun",
+      "hi": "ऑक्सफोर्ड स्कूल के सामने, अग्रसेन कॉलेज के पास, वजना कलां, हिंडौन"
+    },
+    "city": {
+      "en": "Hindaun",
+      "hi": "हिंडौन"
+    },
+    "state": {
+      "en": "Rajasthan",
+      "hi": "राजस्थान"
+    },
+    "country": {
+      "en": "India",
+      "hi": "भारत"
+    },
+    "pincode": "322252",
+    "mapsLink": "https://maps.google.com/?q=Opposite+Oxford+School+Near+Agrasen+College+Vajna+Kalan+Hindaun+Rajasthan+322252"
   },
   "contact": {
-    "phone": "+91 9876 543 210",
-    "email": "info@srividyagurukulam.edu.in",
-    "whatsapp": "+91 9876 543 210"
+    "phone": "+918094247452",
+    "email": "shoonyashikhargurukulam@gmail.com",
+    "whatsapp": "https://wa.me/8094247452"
   },
   "social": {
-    "facebook": "https://facebook.com/srividyagurukulam",
-    "instagram": "https://instagram.com/srividyagurukulam",
-    "youtube": "https://youtube.com/srividyagurukulam",
-    "twitter": "https://twitter.com/srividyagurukul"
+    "facebook": "https://www.facebook.com/share/1EQen4FUHe/?mibextid=wwXIfr",
+    "youtube": "https://youtube.com/@ssgurukul01?si=WWiuYhSreaDOJD_7",
+    "instagram": "https://www.instagram.com/shoonya.shikhar.gurukulam?igsh=M29nZHF0OWgyd2Ey&utm_source=qr"
   },
   "stats": {
-    "yearsOfExcellence": 40,
-    "studentsGraduated": 5000,
-    "gurus": 25,
-    "campusAcres": 50
+    "yearsOfExcellence": "2",
+    "studentsGraduated": "170+",
+    "gurus": "13+",
+    "campusAcres": "50"
   },
-  "vision": "To nurture individuals who embody the wisdom of ancient Indian traditions while being equipped to contribute meaningfully to the modern world.",
-  "mission": "To provide a holistic education that integrates spiritual growth, physical discipline, intellectual development, and moral values in a serene and nurturing environment."
+  "vision": {
+    "en": "To nurture individuals who embody the wisdom of ancient Indian traditions while being equipped to contribute meaningfully to the modern world.",
+    "hi": "ऐसे नागरिकों का निर्माण करना जो आधुनिक विश्व में सार्थक योगदान देने के साथ-साथ प्राचीन भारतीय परंपराओं के दिव्य ज्ञान को आत्मसात करें।"
+  },
+  "mission": {
+    "en": "To provide a holistic education that integrates spiritual growth, physical discipline, intellectual development, and moral values in a serene and nurturing environment.",
+    "hi": "एक शांत और पावन वातावरण में आध्यात्मिक विकास, शारीरिक अनुशासन, बौद्धिक उन्नति और नैतिक मूल्यों को एकीकृत करने वाली समग्र शिक्षा प्रदान करना।"
+  }
 }

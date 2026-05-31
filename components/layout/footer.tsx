@@ -1,30 +1,29 @@
-import Link from 'next/link'
-import { Heart, Phone, Mail, MapPin, Facebook, Instagram } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import Link from "next/link";
+import { Heart, Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const quickLinks = [
-  { name: 'About Us', href: '/about' },
-  { name: 'Courses', href: '/courses' },
-  { name: 'Teachers', href: '/teachers' },
-  { name: 'Admissions', href: '/admissions' },
-  { name: 'Events', href: '/events' },
-  { name: 'Gallery', href: '/gallery' },
-]
+  { name: "About Us", href: "/about" },
+  { name: "Courses", href: "/courses" },
+  { name: "Teachers", href: "/teachers" },
+  { name: "Admissions", href: "/admissions" },
+  { name: "Events", href: "/events" },
+  { name: "Gallery", href: "/gallery" },
+];
 
 const courses = [
-  { name: 'Yoga & Pranayama', href: '/courses#yoga' },
-  { name: 'Meditation', href: '/courses#meditation' },
-  { name: 'Sanskrit Studies', href: '/courses#sanskrit' },
-  { name: 'Martial Arts', href: '/courses#martial-arts' },
-  { name: 'Computer Education', href: '/courses#computer-education' },
-  { name: 'Spiritual Learning', href: '/courses#spiritual-learning' },
-]
+  { name: "Meditation", href: "/curriculum#meditation" },
+  { name: "Martial Arts", href: "/curriculum#martial-arts" },
+  { name: "Computer Education", href: "/curriculum#computer-education" },
+  { name: "Spiritual Learning", href: "/curriculum#spiritual-learning" },
+];
 
 export function Footer() {
   return (
     <footer className="bg-card border-t border-border">
       {/* Donation CTA */}
-      <div className="bg-primary/5 border-b border-border">
+      {/* <div className="bg-primary/5 border-b border-border">
         <div className="container mx-auto px-4 py-12">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
@@ -43,37 +42,51 @@ export function Footer() {
             </Link>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* About */}
           <div>
-            <Link href="/" className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center border-2 border-primary/30">
-                <span className="text-primary text-xl font-bold">ॐ</span>
+            {/* Logo */}
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="w-12 h-12 rounded-full overflow-hidden bg-primary/10 flex items-center justify-center border-2 border-primary/30 group-hover:border-primary transition-colors relative">
+                <Image
+                  src="/images/logo.png" // Path to your logo in the public folder
+                  alt="Shoonya Shikhar Logo"
+                  width={48} // Matches the w-12 container width
+                  height={48} // Matches the h-12 container height
+                  className="object-cover"
+                />
               </div>
-              <div>
-                <h2 className="text-lg font-semibold text-foreground leading-tight">Shoonya Shikhar</h2>
-                <p className="text-xs text-muted-foreground tracking-wider uppercase">Gurukulam</p>
+              {/* Text Branding */}
+              <div className="hidden sm:block">
+                <h1 className="text-lg font-semibold text-foreground leading-tight">
+                  Shoonya Shikhar
+                </h1>
+                <p className="text-xs text-muted-foreground tracking-wider uppercase">
+                  Gurukulam
+                </p>
               </div>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-              A traditional Indian Gurukulam dedicated to holistic education, where ancient wisdom meets modern learning in a serene spiritual environment.
+              A traditional Indian Gurukulam dedicated to holistic education,
+              where ancient wisdom meets modern learning in a serene spiritual
+              environment.
             </p>
             <div className="flex gap-3">
-              <a 
-                href="https://www.facebook.com/shoonya.shikhar.gurukulam/" 
-                target="_blank" 
+              <a
+                href="https://www.facebook.com/shoonya.shikhar.gurukulam/"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 <Facebook className="w-5 h-5" />
               </a>
-              <a 
-                href="https://www.instagram.com/shoonya.shikhar.gurukulam" 
-                target="_blank" 
+              <a
+                href="https://www.instagram.com/shoonya.shikhar.gurukulam"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
               >
@@ -84,11 +97,13 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-6">Quick Links</h3>
+            <h3 className="text-lg font-semibold text-foreground mb-6">
+              Quick Links
+            </h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <Link 
+                  <Link
                     href={link.href}
                     className="text-muted-foreground hover:text-primary transition-colors text-sm"
                   >
@@ -101,11 +116,13 @@ export function Footer() {
 
           {/* Courses */}
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-6">Our Courses</h3>
+            <h3 className="text-lg font-semibold text-foreground mb-6">
+              Our Curriculum
+            </h3>
             <ul className="space-y-3">
               {courses.map((link) => (
                 <li key={link.name}>
-                  <Link 
+                  <Link
                     href={link.href}
                     className="text-muted-foreground hover:text-primary transition-colors text-sm"
                   >
@@ -118,33 +135,42 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-6">Contact Us</h3>
+            <h3 className="text-lg font-semibold text-foreground mb-6">
+              Contact Us
+            </h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                 <span className="text-muted-foreground text-sm">
-                  Oxford School ke Saamne, Keshav Pura,<br />
+                  Oxford School ke Saamne, Keshav Pura,
+                  <br />
                   Hindaun, Rajasthan 322230
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary shrink-0" />
-                <a href="tel:+918094247452" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                <a
+                  href="tel:+918094247452"
+                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                >
                   +91 80942 47452
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary shrink-0" />
-                <a href="mailto:shoonyashikhargurukulam@gmail.com" className="text-muted-foreground hover:text-primary transition-colors text-sm break-all">
+                <a
+                  href="mailto:shoonyashikhargurukulam@gmail.com"
+                  className="text-muted-foreground hover:text-primary transition-colors text-sm break-all"
+                >
                   shoonyashikhargurukulam@gmail.com
                 </a>
               </li>
             </ul>
 
             {/* Map Embed */}
-            <a 
-              href="https://share.google/5B91roLY32vaQLskI" 
-              target="_blank" 
+            <a
+              href="https://share.google/5B91roLY32vaQLskI"
+              target="_blank"
               rel="noopener noreferrer"
               className="mt-6 block rounded-lg overflow-hidden border border-border hover:border-primary/50 transition-colors group"
             >
@@ -177,13 +203,20 @@ export function Footer() {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-muted-foreground text-sm text-center md:text-left">
-              &copy; {new Date().getFullYear()} Shoonya Shikhar Gurukulam. All rights reserved.
+              &copy; {new Date().getFullYear()} Shoonya Shikhar Gurukulam. All
+              rights reserved.
             </p>
             <div className="flex gap-6">
-              <Link href="/privacy" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+              <Link
+                href="/privacy"
+                className="text-muted-foreground hover:text-primary transition-colors text-sm"
+              >
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+              <Link
+                href="/terms"
+                className="text-muted-foreground hover:text-primary transition-colors text-sm"
+              >
                 Terms of Service
               </Link>
             </div>
@@ -191,5 +224,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

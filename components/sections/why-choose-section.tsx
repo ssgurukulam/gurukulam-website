@@ -18,7 +18,7 @@ const features = [
   {
     icon: TreePine,
     title: 'Serene Natural Setting',
-    description: 'Our 50-acre campus in the Himalayan foothills provides the perfect environment for spiritual growth and focused learning.',
+    description: 'Inspired by the ancient Gurukulam tradition, we are continuously working to provide a natural and value-based learning environment for our students. Our vision is to establish a 9,075 sq. yard Gurukulam campus in the lap of nature at Karauli, where education, संस्कार, discipline, meditation, and holistic development come together to shape future leaders.',
   },
   {
     icon: Heart,

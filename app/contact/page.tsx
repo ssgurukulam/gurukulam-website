@@ -35,10 +35,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    details: [
-      "info@srividyagurukulam.edu.in",
-      "admissions@srividyagurukulam.edu.in",
-    ],
+    details: ["shoonyashikhargurukulam@gmail.com"],
   },
   {
     icon: Clock,
@@ -52,12 +49,12 @@ const contactInfo = [
 ];
 
 const departments = [
-  { name: "General Inquiries", email: "info@srividyagurukulam.edu.in" },
-  { name: "Admissions", email: "admissions@srividyagurukulam.edu.in" },
-  { name: "Alumni Relations", email: "alumni@srividyagurukulam.edu.in" },
-  { name: "Donations & Support", email: "donate@srividyagurukulam.edu.in" },
-  { name: "Media & Press", email: "media@srividyagurukulam.edu.in" },
-  { name: "Careers", email: "careers@srividyagurukulam.edu.in" },
+  { name: "General Inquiries", email: "shoonyashikhargurukulam@gmail.com" },
+  { name: "Admissions", email: "shoonyashikhargurukulam@gmail.com" },
+  { name: "Alumni Relations", email: "shoonyashikhargurukulam@gmail.com" },
+  // { name: "Donations & Support", email: "shoonyashikhargurukulam@gmail.com" },
+  { name: "Media & Press", email: "shoonyashikhargurukulam@gmail.com" },
+  { name: "Careers", email: "shoonyashikhargurukulam@gmail.com" },
 ];
 
 export default function ContactPage() {

@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { Section, SectionHeader, FadeIn } from "@/components/ui/section";
 import { CTASection } from "@/components/sections/cta-section";
-import { Quote } from "lucide-react";
+import { Languages, Quote } from "lucide-react";
 import testimonials from "@/content/testimonials.json";
 
 export const metadata: Metadata = {
@@ -141,7 +141,7 @@ export default function TestimonialsPage() {
       </Section>
 
       {/* Stats */}
-      <Section className="bg-card">
+      {/* <Section className="bg-card">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
             { value: "5000+", label: "Alumni Worldwide" },
@@ -159,7 +159,7 @@ export default function TestimonialsPage() {
             </FadeIn>
           ))}
         </div>
-      </Section>
+      </Section> */}
 
       {/* Share Story CTA */}
       <Section>
@@ -174,7 +174,7 @@ export default function TestimonialsPage() {
               impacted your life.
             </p>
             <a
-              href="mailto:alumni@srividyagurukulam.edu.in"
+              href="mailto:shoonyashikhargurukulam@gmail.com"
               className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
             >
               Submit Your Testimonial
@@ -183,7 +183,7 @@ export default function TestimonialsPage() {
         </FadeIn>
       </Section>
 
-      <CTASection />
+      <CTASection language="en" />
     </>
   );
 }

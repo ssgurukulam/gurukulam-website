@@ -1,21 +1,5 @@
 [
   {
-    "id": "yoga",
-    "title": "Yoga & Pranayama",
-    "shortDescription": "Master the ancient art of yoga for physical, mental, and spiritual well-being.",
-    "description": "Our comprehensive yoga program covers Hatha Yoga, Ashtanga Yoga, Pranayama, and meditation techniques. Students learn the philosophical foundations alongside physical practice.",
-    "icon": "lotus",
-    "duration": "2-4 years",
-    "highlights": [
-      "Classical Hatha Yoga",
-      "Ashtanga Vinyasa",
-      "Pranayama & Breathing",
-      "Yoga Philosophy",
-      "Teaching Methodology"
-    ],
-    "image": "/images/yoga.jpg"
-  },
-  {
     "id": "meditation",
     "title": "Meditation & Dhyana",
     "shortDescription": "Discover inner peace through ancient meditation techniques and mindfulness practices.",
@@ -46,22 +30,6 @@
       "Discipline Training"
     ],
     "image": "/images/martial-arts.jpg"
-  },
-  {
-    "id": "sanskrit",
-    "title": "Sanskrit & Vedic Studies",
-    "shortDescription": "Master the sacred language of Sanskrit and study ancient Vedic scriptures.",
-    "description": "Comprehensive Sanskrit education from basics to advanced literature. Study Vedas, Upanishads, Bhagavad Gita, and classical Sanskrit texts in their original form.",
-    "icon": "book",
-    "duration": "4-6 years",
-    "highlights": [
-      "Sanskrit Grammar",
-      "Vedic Chanting",
-      "Scripture Study",
-      "Classical Literature",
-      "Composition & Poetry"
-    ],
-    "image": "/images/sanskrit.jpg"
   },
   {
     "id": "computer-education",

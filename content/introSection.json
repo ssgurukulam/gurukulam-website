@@ -1,0 +1,30 @@
+{
+  "image": "https://res.cloudinary.com/dgzi1ruvs/image/upload/v1780212548/intro_wq1nms.jpg",
+  "tagline": {
+    "en": "Our Heritage",
+    "hi": "हमारी धरोहर"
+  },
+  "headingStart": {
+    "en": "A Sacred Space for",
+    "hi": "समग्र शिक्षा हेतु"
+  },
+  "headingAccent": {
+    "en": "Holistic Learning",
+    "hi": "एक पावन परिसर"
+  },
+  "paragraphs": [
+    {
+      "en": "Founded in 1985 by Swami Vishwananda Ji, Shoonya Shikhar Gurukulam stands as a beacon of traditional Indian education in the modern world. Our 50-acre campus, nestled in the serene foothills of the Himalayas near Rishikesh, provides the perfect environment for spiritual growth and academic excellence.",
+      "hi": "स्वामी विश्वानंद जी द्वारा 1985 में स्थापित, शून्य शिखर गुरुकुलम् आधुनिक विश्व में पारंपरिक भारतीय शिक्षा के एक प्रकाश स्तंभ के रूप में खड़ा है। ऋषिकेश के समीप ... परिसर आध्यात्मिक विकास और शैक्षणिक उत्कृष्टता के लिए आदर्श वातावरण प्रदान करता है।"
+    }
+  ],
+  "features": [
+    {
+      "title": { "en": "Residential", "hi": "आवासीय परिसर" },
+      "desc": {
+        "en": "Traditional Gurukul living",
+        "hi": "पारंपरिक गुरुकुल जीवनशैली"
+      }
+    }
+  ]
+}

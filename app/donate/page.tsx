@@ -48,12 +48,12 @@ const donationPurposes = [
   },
 ];
 
-const impactStats = [
-  { value: "500+", label: "Students on Scholarship" },
-  { value: "₹2Cr+", label: "Donated Last Year" },
-  { value: "100%", label: "Goes to Programs" },
-  { value: "5000+", label: "Lives Transformed" },
-];
+// const impactStats = [
+//   { value: "500+", label: "Students on Scholarship" },
+//   { value: "₹2Cr+", label: "Donated Last Year" },
+//   { value: "100%", label: "Goes to Programs" },
+//   { value: "5000+", label: "Lives Transformed" },
+// ];
 
 const donationAmounts = [1000, 5000, 10000, 25000, 50000];
 
@@ -303,7 +303,7 @@ export default function DonatePage() {
       </Section>
 
       {/* Stats */}
-      <Section className="bg-card">
+      {/* <Section className="bg-card">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {impactStats.map((stat) => (
             <FadeIn key={stat.label}>
@@ -316,7 +316,7 @@ export default function DonatePage() {
             </FadeIn>
           ))}
         </div>
-      </Section>
+      </Section> */}
 
       {/* Other Ways */}
       <Section>

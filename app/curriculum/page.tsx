@@ -20,12 +20,12 @@ import {
   CheckCircle,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import courses from "@/content/courses.json";
+import curriculum from "@/content/curriculum.json";
 
 export const metadata: Metadata = {
-  title: "Courses",
+  title: "Curriculum",
   description:
-    "Explore our comprehensive courses in Yoga, Meditation, Sanskrit, Martial Arts, and more at Shoonya Shikhar Gurukulam.",
+    "Explore our comprehensive curriculum in Yoga, Meditation, Martial Arts, and more at Shoonya Shikhar Gurukulam.",
 };
 
 const iconMap: Record<string, React.ElementType> = {
@@ -39,7 +39,7 @@ const iconMap: Record<string, React.ElementType> = {
   flame: Flame,
 };
 
-export default function CoursesPage() {
+export default function CurriculumPage() {
   return (
     <>
       {/* Hero */}
@@ -65,7 +65,7 @@ export default function CoursesPage() {
       {/* Courses Grid */}
       <Section>
         <div className="space-y-16">
-          {courses.map((course, index) => {
+          {curriculum.map((course, index) => {
             const Icon = iconMap[course.icon] || Flower2;
             const isEven = index % 2 === 0;
 
@@ -127,7 +127,7 @@ export default function CoursesPage() {
                 </div>
 
                 {/* Divider */}
-                {index < courses.length - 1 && (
+                {index < curriculum.length - 1 && (
                   <div className="mt-16 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent" />
                 )}
               </FadeIn>
@@ -178,7 +178,7 @@ export default function CoursesPage() {
         </div>
       </Section>
 
-      <CTASection />
+      <CTASection language="en"/>
     </>
   );
 }

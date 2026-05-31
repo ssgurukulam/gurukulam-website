@@ -20,7 +20,7 @@ const navItems = [
       { name: "Vision & Mission", href: "/vision-mission" },
     ],
   },
-  { name: "Courses", href: "/courses" },
+  { name: "Curriculum", href: "/curriculum" },
   { name: "Teachers", href: "/teachers" },
   { name: "Gallery", href: "/gallery" },
   { name: "Events", href: "/events" },
@@ -173,11 +173,11 @@ export function Header() {
             )}
 
             {/* Donate Button */}
-            <Link href="/donate" className="hidden sm:block">
+            {/* <Link href="/donate" className="hidden sm:block">
               <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
                 Donate
               </Button>
-            </Link>
+            </Link> */}
 
             {/* Mobile Menu Toggle */}
             <Button
@@ -241,11 +241,11 @@ export function Header() {
                     )}
                   </div>
                 ))}
-                <Link href="/donate" className="mt-4">
+                {/* <Link href="/donate" className="mt-4">
                   <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
                     Donate
                   </Button>
-                </Link>
+                </Link> */}
               </div>
             </div>
           </motion.div>
