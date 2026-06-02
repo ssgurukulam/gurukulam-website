@@ -21,8 +21,8 @@ export default async function HomePage() {
       <TeachersSection language={language} />
       <GallerySection language={language} />
       <IntroSection language={language} />
-      <WhyChooseSection />
       <CurriculumSection />
+      <WhyChooseSection />
       <DailyLifeSection />
       <TestimonialsSection />
       <CTASection language={language} />

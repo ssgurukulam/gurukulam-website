@@ -45,9 +45,9 @@ export default function TestimonialsPage() {
               gained here continue to guide every aspect of my life.&quot;
             </p>
             <div>
-              <p className="font-semibold text-foreground">Dr. Venkatesh Rao</p>
+              <p className="font-semibold text-foreground">Mrs Sunita Bainsla</p>
               <p className="text-sm text-muted-foreground">
-                Batch of 1995 | Now Professor of Philosophy, BHU
+                IRS
               </p>
             </div>
           </div>

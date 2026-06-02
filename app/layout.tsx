@@ -5,6 +5,8 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { FloatingAssistant } from "@/components/ui/floating-assistant";
 import "./globals.css";
+import { cookies } from "next/headers";
+import { LanguageProvider } from "@/components/language-provider";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -28,16 +30,28 @@ export const metadata: Metadata = {
   description:
     "A traditional Indian Gurukulam dedicated to holistic education through Yoga, Meditation, Martial Arts, Sanskrit, and Modern Sciences. Where ancient wisdom meets modern learning.",
   keywords: [
+    "ssgurukulam",
     "gurukulam",
-    "yoga",
+    "shoonya shikhar",
+    "hindaun city gurukulam",
     "meditation",
-    "sanskrit",
     "traditional education",
     "indian culture",
     "spiritual learning",
     "martial arts",
-    "vedic studies",
+    "pushpendra bainsla",
+    "sushil jangid",
   ],
+  icons: {
+    icon: [
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
   authors: [{ name: "Shoonya Shikhar Gurukulam" }],
   creator: "Shoonya Shikhar Gurukulam",
   openGraph: {
@@ -70,13 +84,17 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Read the lang parameter server-side to prevent hydration flickering on initial load
+  const cookieStore = await cookies();
+  const initialLanguage = cookieStore.get("lang")?.value || "en";
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={initialLanguage} suppressHydrationWarning>
       <body
         className={`${cormorant.variable} ${sourceSans.variable} font-sans antialiased bg-background`}
       >
@@ -86,12 +104,13 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-          <main>{children}</main>
-          <Footer />
-          <FloatingAssistant />
+          <LanguageProvider initialLanguage={initialLanguage}>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+            <FloatingAssistant />
+          </LanguageProvider>
         </ThemeProvider>
-        {process.env.NODE_ENV === "production"}
       </body>
     </html>
   );

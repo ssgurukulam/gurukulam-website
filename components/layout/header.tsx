@@ -4,13 +4,20 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Sun, Moon, ChevronDown } from "lucide-react";
+import { Menu, X, Sun, Moon, ChevronDown, Languages } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { useLanguage } from "@/components/language-provider";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
-const navItems = [
+const navItemsEn = [
   { name: "Home", href: "/" },
   {
     name: "About",
@@ -29,6 +36,25 @@ const navItems = [
   { name: "Contact", href: "/contact" },
 ];
 
+const navItemsHi = [
+  { name: "होम", href: "/" },
+  {
+    name: "हमारे बारे में",
+    href: "/about",
+    children: [
+      { name: "गुरुकुल के बारे में", href: "/about" },
+      { name: "दृष्टि और लक्ष्य", href: "/vision-mission" },
+    ],
+  },
+  { name: "पाठ्यक्रम", href: "/curriculum" },
+  { name: "शिक्षक", href: "/teachers" },
+  { name: "गैलरी", href: "/gallery" },
+  // { name: "कार्यक्रम", href: "/events" },
+  { name: "प्रशंसापत्र", href: "/testimonials" },
+  { name: "प्रवेश", href: "/admissions" },
+  { name: "संपर्क", href: "/contact" },
+];
+
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -36,6 +62,9 @@ export function Header() {
   const pathname = usePathname();
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const { language, setLanguage } = useLanguage();
+
+  const navItems = language === "en" ? navItemsEn : navItemsHi;
 
   useEffect(() => {
     setMounted(true);
@@ -55,6 +84,8 @@ export function Header() {
     return pathname.startsWith(href);
   };
 
+  const currentLanguageLabel = language === "en" ? "English" : "हिंदी";
+
   return (
     <header
       className={cn(
@@ -70,10 +101,10 @@ export function Header() {
           <Link href="/" className="flex items-center gap-3 group">
             <div className="w-12 h-12 rounded-full overflow-hidden bg-primary/10 flex items-center justify-center border-2 border-primary/30 group-hover:border-primary transition-colors relative">
               <Image
-                src="/images/logo.png" // Path to your logo in the public folder
+                src="/images/logo.png"
                 alt="Shoonya Shikhar Logo"
-                width={48} // Matches the w-12 container width
-                height={48} // Matches the h-12 container height
+                width={48}
+                height={48}
                 className="object-cover"
               />
             </div>
@@ -95,7 +126,7 @@ export function Header() {
                 {item.children ? (
                   <button
                     className={cn(
-                      "flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors rounded-md",
+                      "flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors rounded-md cursor-pointer",
                       isActive(item.href)
                         ? "text-primary"
                         : "text-foreground/80 hover:text-primary hover:bg-primary/5",
@@ -120,7 +151,7 @@ export function Header() {
                   </Link>
                 )}
 
-                {/* Dropdown */}
+                {/* Dropdown Navigation Menu Drawer */}
                 {item.children && (
                   <AnimatePresence>
                     {openDropdown === item.name && (
@@ -128,7 +159,7 @@ export function Header() {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 10 }}
-                        className="absolute top-full left-0 mt-1 bg-card border border-border rounded-lg shadow-lg py-2 min-w-48"
+                        className="absolute top-full left-0 mt-1 bg-popover text-popover-foreground border border-border rounded-xl shadow-lg py-2 min-w-48 z-50"
                         onMouseEnter={() => setOpenDropdown(item.name)}
                         onMouseLeave={() => setOpenDropdown(null)}
                       >
@@ -137,10 +168,10 @@ export function Header() {
                             key={child.name}
                             href={child.href}
                             className={cn(
-                              "block px-4 py-2 text-sm transition-colors",
+                              "block px-4 py-2 text-sm transition-colors font-medium",
                               isActive(child.href)
-                                ? "text-primary bg-primary/5"
-                                : "text-foreground/80 hover:text-primary hover:bg-primary/5",
+                                ? "text-primary bg-primary/5 font-semibold"
+                                : "text-muted-foreground hover:text-primary hover:bg-muted/5",
                             )}
                           >
                             {child.name}
@@ -156,13 +187,51 @@ export function Header() {
 
           {/* Right Side Actions */}
           <div className="flex items-center gap-3">
-            {/* Theme Toggle */}
+            {/* Language Toggle Menu Dropdown Trigger */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="gap-2 text-foreground/80 hover:text-primary px-3 cursor-pointer rounded-lg hover:bg-primary/5 font-medium transition-colors"
+                >
+                  <Languages className="w-4 h-4 opacity-80" />
+                  <span className="text-sm">{currentLanguageLabel}</span>
+                  <ChevronDown className="w-3.5 h-3.5 opacity-50" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent
+                align="end"
+                className="min-w-32 bg-popover text-popover-foreground border-border/50 rounded-xl p-1 shadow-lg z-50"
+              >
+                <DropdownMenuItem
+                  onClick={() => setLanguage("en")}
+                  className={cn(
+                    "cursor-pointer rounded-lg text-sm px-3 py-2 font-medium focus:bg-primary/5 focus:text-primary transition-colors",
+                    language === "en" && "font-bold text-primary bg-primary/5",
+                  )}
+                >
+                  English
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => setLanguage("hi")}
+                  className={cn(
+                    "cursor-pointer rounded-lg text-sm px-3 py-2 font-medium focus:bg-primary/5 focus:text-primary transition-colors",
+                    language === "hi" && "font-bold text-primary bg-primary/5",
+                  )}
+                >
+                  हिंदी
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Theme Toggle Button Icon */}
             {mounted && (
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="text-foreground/80 hover:text-primary"
+                className="text-foreground/80 hover:text-primary cursor-pointer rounded-lg hover:bg-primary/5 transition-colors"
               >
                 {theme === "dark" ? (
                   <Sun className="w-5 h-5" />
@@ -172,18 +241,11 @@ export function Header() {
               </Button>
             )}
 
-            {/* Donate Button */}
-            {/* <Link href="/donate" className="hidden sm:block">
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                Donate
-              </Button>
-            </Link> */}
-
-            {/* Mobile Menu Toggle */}
+            {/* Mobile Menu Open Switcher */}
             <Button
               variant="ghost"
               size="icon"
-              className="lg:hidden"
+              className="lg:hidden cursor-pointer text-foreground/80 hover:text-primary"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? (
@@ -196,14 +258,14 @@ export function Header() {
         </nav>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Panel Drawer */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-background border-t border-border"
+            className="lg:hidden bg-background border-t border-border/50"
           >
             <div className="container mx-auto px-4 py-4">
               <div className="flex flex-col gap-1">
@@ -216,9 +278,9 @@ export function Header() {
                             key={child.name}
                             href={child.href}
                             className={cn(
-                              "block px-4 py-3 rounded-lg transition-colors",
+                              "block px-4 py-3 rounded-lg transition-colors text-sm font-medium",
                               isActive(child.href)
-                                ? "text-primary bg-primary/5"
+                                ? "text-primary bg-primary/5 font-semibold"
                                 : "text-foreground/80 hover:text-primary hover:bg-primary/5",
                             )}
                           >
@@ -230,9 +292,9 @@ export function Header() {
                       <Link
                         href={item.href}
                         className={cn(
-                          "block px-4 py-3 rounded-lg transition-colors",
+                          "block px-4 py-3 rounded-lg transition-colors text-sm font-medium",
                           isActive(item.href)
-                            ? "text-primary bg-primary/5"
+                            ? "text-primary bg-primary/5 font-semibold"
                             : "text-foreground/80 hover:text-primary hover:bg-primary/5",
                         )}
                       >
@@ -241,11 +303,6 @@ export function Header() {
                     )}
                   </div>
                 ))}
-                {/* <Link href="/donate" className="mt-4">
-                  <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                    Donate
-                  </Button>
-                </Link> */}
               </div>
             </div>
           </motion.div>

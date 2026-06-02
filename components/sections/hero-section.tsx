@@ -93,19 +93,6 @@ export function HeroSection({ language }: HeroSectionProps) {
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* LEFT PANEL: Typography & Messaging Branding */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left order-2 lg:order-1">
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <span className="inline-flex items-center px-4 py-1.5 text-xs md:text-sm font-medium tracking-wide text-primary bg-primary/10 rounded-full border border-primary/20">
-                सा विद्या या विमुक्तये । —{" "}
-                {isHi
-                  ? "सच्ची शिक्षा वही है जो मुक्त करे।"
-                  : "True wisdom leads to liberation."}
-              </span>
-            </motion.div>
-
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -118,6 +105,18 @@ export function HeroSection({ language }: HeroSectionProps) {
                 {isHi ? "गुरुकुलम्" : "Gurukulam"}
               </span>
             </motion.h1>
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <span className="inline-flex items-center px-4 py-1.5 text-xs md:text-sm font-medium tracking-wide text-primary bg-primary/10 rounded-full border border-primary/20">
+                सा विद्या या विमुक्तये । —{" "}
+                {isHi
+                  ? "सच्ची शिक्षा वही है जो मुक्त करे।"
+                  : "True wisdom leads to liberation."}
+              </span>
+            </motion.div>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -173,7 +172,7 @@ export function HeroSection({ language }: HeroSectionProps) {
                   value: "13+",
                   label: isHi ? "आचार्य गुरु" : "Expert Acharyas",
                 },
-                { value: "3", label: isHi ? "एकड़ परिसर" : "Acre Campus" },
+                { value: "3", label: isHi ? "मंजिला परिसर" : "Storied Campus" },
               ].map((stat, i) => (
                 <div key={i} className="text-center lg:text-left">
                   <div className="text-xl md:text-2xl font-bold text-primary">

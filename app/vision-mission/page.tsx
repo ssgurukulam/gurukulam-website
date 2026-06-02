@@ -268,7 +268,7 @@ export default function VisionMissionPage({
                   Shikhar Gurukulam stands as a unique blend of modern education
                   and the timeless wisdom of the Indian Gurukul tradition.
                   Nestled in the serene foothills near Pachna Dam, Karauli, our
-                  3-acre campus offers an ideal environment for both academic
+                  3-storied campus offers an ideal environment for both academic
                   excellence and holistic personal growth.
                 </p>
               )}

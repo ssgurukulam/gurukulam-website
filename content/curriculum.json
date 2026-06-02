@@ -13,7 +13,7 @@
       "Contemplative Studies",
       "Silent Retreats"
     ],
-    "image": "/images/meditation.jpg"
+    "image": "https://res.cloudinary.com/dgzi1ruvs/image/upload/v1780369869/The_Adiyogi_Statue_based_in_Coimbatore_is_a_j6bf9f.jpg"
   },
   {
     "id": "martial-arts",
@@ -29,7 +29,7 @@
       "Physical Conditioning",
       "Discipline Training"
     ],
-    "image": "/images/martial-arts.jpg"
+    "image": "https://res.cloudinary.com/dgzi1ruvs/image/upload/v1780369869/Karate_Pose_nxmlub.jpg"
   },
   {
     "id": "computer-education",
@@ -45,23 +45,7 @@
       "Web Development",
       "Computer Science"
     ],
-    "image": "/images/computer.jpg"
-  },
-  {
-    "id": "moral-education",
-    "title": "Moral & Traditional Education",
-    "shortDescription": "Character development through timeless values and ethical principles.",
-    "description": "Foundation courses in Indian ethics, dharma, and character building. Students learn through stories, discussions, and practical application of moral principles.",
-    "icon": "heart",
-    "duration": "Ongoing",
-    "highlights": [
-      "Ethics & Dharma",
-      "Character Building",
-      "Value Education",
-      "Story Traditions",
-      "Community Service"
-    ],
-    "image": "/images/moral.jpg"
+    "image": "https://res.cloudinary.com/dgzi1ruvs/image/upload/v1780369870/Computer_rmtrpl.jpg"
   },
   {
     "id": "personality-development",
@@ -77,7 +61,7 @@
       "Communication",
       "Self-Confidence"
     ],
-    "image": "/images/personality.jpg"
+    "image": "https://res.cloudinary.com/dgzi1ruvs/image/upload/v1780369870/Hey_there_If_there_s_one_thing_I_ve_learned_in_life_it_s_that_confidence_is_like_the_secret_sauce_that_spices_up_everything_from_our_careers_to_our_relationships_and_beyond__But_let_s_be_real_building_confidence_xb0e13.jpg"
   },
   {
     "id": "spiritual-learning",
@@ -88,11 +72,13 @@
     "duration": "Lifelong",
     "highlights": [
       "Philosophy Studies",
-      "Ritual Practices",
-      "Satsang & Discourses",
-      "Pilgrimage Studies",
-      "Inner Transformation"
+      "Inner Transformation",
+      "Ethics & Dharma",
+      "Character Building",
+      "Value Education",
+      "Story Traditions",
+      "Community Service"
     ],
-    "image": "/images/spiritual.jpg"
+    "image": "https://res.cloudinary.com/dgzi1ruvs/image/upload/v1780369870/4_Things_Yoga_Brings_You_Inspirational_Digital_Print_zulynf.jpg"
   }
 ]

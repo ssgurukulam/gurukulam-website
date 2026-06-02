@@ -33,7 +33,7 @@
         {
           "id": "c5",
           "type": "video",
-          "showOnHero": true,
+          "showOnHero": false,
           "src": "https://res.cloudinary.com/dgzi1ruvs/video/upload/students_in_temple_video_twlwom.mp4",
           "en": "Students Inner Temple Contemplation",
           "hi": "मुख्य मंदिर परिसर में ध्यानमग्न विद्यार्थी"

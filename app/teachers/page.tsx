@@ -129,7 +129,7 @@ export default async function TeachersPage() {
         </div>
       </Section>
 
-      <CTASection />
+      <CTASection language={language} />
     </>
   );
 }

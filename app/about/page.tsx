@@ -47,19 +47,18 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                Shoonya Shikhar Gurukulam was established in 1985 by His
-                Holiness Swami Vishwananda Ji with a vision to revive the
-                ancient Gurukul system of education in its purest form. Nestled
-                in the sacred foothills of the Himalayas near Rishikesh, our
-                institution has been a beacon of traditional Indian learning for
-                over four decades.
+                Established in 2025, Shunya Shikhar Gurukulam balances timeless
+                Vedic wisdom with cutting-edge modern technology. Located in the
+                peaceful foothills of Pachna Dam, Karauli, our campus shapes
+                characters through disciplined living, meditation, coding, and
+                physical combat mastery.
               </p>
               <p>
                 The Gurukulam began with just 12 students and 3 teachers in a
-                modest ashram. Today, we have grown to accommodate over 200
-                residential students, guided by 25 expert Gurus, on a sprawling
-                50-acre campus that includes temples, meditation halls, yoga
-                shalas, libraries, and modern educational facilities.
+                modest ashram. Today, we have grown to accommodate over 170+
+                residential students, guided by 13+ expert Gurus, on a sprawling
+                3 floored campus that includes temples, meditation halls,
+                meditation room, library, and modern educational facilities.
               </p>
               <p>
                 Our growth has never compromised our core values. We continue to
