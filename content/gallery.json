@@ -29,14 +29,6 @@
           "src": "https://res.cloudinary.com/dgzi1ruvs/image/upload/v1780139977/banner_with_students_axuv4u.jpg",
           "en": "Traditional Education Campus Banner",
           "hi": "पारंपरिक शिक्षा परिसर मुख्य बैनर"
-        },
-        {
-          "id": "c5",
-          "type": "video",
-          "showOnHero": false,
-          "src": "https://res.cloudinary.com/dgzi1ruvs/video/upload/students_in_temple_video_twlwom.mp4",
-          "en": "Students Inner Temple Contemplation",
-          "hi": "मुख्य मंदिर परिसर में ध्यानमग्न विद्यार्थी"
         }
       ]
     },
@@ -48,14 +40,15 @@
         {
           "id": "y2",
           "type": "video",
-          "src": "https://res.cloudinary.com/dgzi1ruvs/video/upload/satsang_video1_yi1fss.mp4",
+          "showOnHero": true,
+          "src": "https://res.cloudinary.com/dgzi1ruvs/video/upload/WhatsApp_Video_2026-06-07_at_4.51.02_PM_egj2pi.mp4",
           "en": "Dhyan Sadhana Guide",
           "hi": "ध्यान साधना मार्गदर्शन"
         },
         {
           "id": "y3",
           "type": "image",
-          "showOnHero": true,
+          "showOnHero": false,
           "src": "https://res.cloudinary.com/dgzi1ruvs/image/upload/v1780139968/stasang1_ltlkyu.jpg",
           "en": "Satsang & Traditional Wisdom Assembly",
           "hi": "सत्संग एवं पारंपरिक ज्ञान सभा"
@@ -70,7 +63,15 @@
         {
           "id": "m1",
           "type": "image",
-          "src": "https://res.cloudinary.com/your-cloud/image/upload/v1234/gallery/martial/kalaripayattu.jpg",
+          "src": "https://res.cloudinary.com/dgzi1ruvs/image/upload/v1780843917/2_n4nnqw.jpg",
+          "en": "Self Defense Students",
+          "hi": "आत्मरक्षा सीखने वाले छात्र"
+        },
+        {
+          "id": "m2",
+          "type": "video",
+          "showOnHero": true,
+          "src": "https://res.cloudinary.com/dgzi1ruvs/video/upload/WhatsApp_Video_2026-06-07_at_11.41.03_AM_1_lcxhdn.mp4",
           "en": "Self Defense Practice",
           "hi": "आत्मरक्षा अभ्यास"
         }
@@ -81,13 +82,6 @@
       "en": { "name": "Celebrations" },
       "hi": { "name": "उत्सव एवं पर्व" },
       "images": [
-        {
-          "id": "f1",
-          "type": "image",
-          "src": "https://res.cloudinary.com/your-cloud/image/upload/v1234/gallery/festivals/gurupurnima.jpg",
-          "en": "Guru Purnima Utsav",
-          "hi": "गुरु पूर्णिमा उत्सव"
-        },
         {
           "id": "f2",
           "type": "image",

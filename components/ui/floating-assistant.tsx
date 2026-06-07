@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Phone, Mail } from "lucide-react";
+import { useLanguage } from "@/components/language-provider";
 
 // Custom Lotus Icon
 function LotusIcon({ className }: { className?: string }) {
@@ -33,20 +34,26 @@ function WhatsAppIcon({ className }: { className?: string }) {
   );
 }
 
-const tooltips = [
-  "Seek Guidance",
-  "Begin Your Journey",
-  "Ask About Admissions",
-  "Talk with Gurukul",
-];
+// 🚀 THE FIX: Explicitly type the lookup keys so TypeScript knows it's a safe Record map
+const tooltips: Record<string, string> = {
+  en: "Ask About Admissions",
+  hi: "प्रवेश संबंधी जानकारी लें",
+};
 
 export function FloatingAssistant() {
   const [isOpen, setIsOpen] = useState(false);
-  const [tooltipIndex] = useState(0);
+  const { language: clientLang } = useLanguage();
+
+  // Normalize key lookup variable cleanly
+  const language = clientLang || "en";
+  const isHi = language === "hi";
 
   const whatsappNumber = "918094247452";
+
   const whatsappMessage = encodeURIComponent(
-    "Namaste, I would like to know more about the Gurukulam."
+    isHi
+      ? "नमस्ते, मैं शून्य शिखर गुरुकुलम के बारे में अधिक जानकारी प्राप्त करना चाहता हूँ।"
+      : "Namaste, I would like to know more about the Gurukulam.",
   );
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
@@ -73,17 +80,19 @@ export function FloatingAssistant() {
                   </div>
                   <div>
                     <h3 className="font-serif text-lg text-foreground">
-                      Namaste
+                      {isHi ? "नमस्ते" : "Namaste"}
                     </h3>
                     <p className="text-sm text-muted-foreground">
-                      Welcome to SS Gurukulam
+                      {isHi
+                        ? "शून्य शिखर गुरुकुलम में आपका स्वागत है"
+                        : "Welcome to SS Gurukulam"}
                     </p>
                   </div>
                 </div>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="text-muted-foreground hover:text-foreground transition-colors p-1"
-                  aria-label="Close assistant"
+                  className="text-muted-foreground hover:text-foreground transition-colors p-1 cursor-pointer"
+                  aria-label={isHi ? "सहायक बंद करें" : "Close assistant"}
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -93,8 +102,9 @@ export function FloatingAssistant() {
             {/* Content */}
             <div className="p-6">
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                We are here to guide you on your learning journey. Choose how
-                you&apos;d like to connect with us.
+                {isHi
+                  ? "हम आपकी शिक्षण यात्रा में मार्गदर्शन के लिए उपलब्ध हैं। संपर्क करने का माध्यम चुनें।"
+                  : "We are here to guide you on your learning journey. Choose how you'd like to connect with us."}
               </p>
 
               {/* Communication Options */}
@@ -111,10 +121,10 @@ export function FloatingAssistant() {
                   </div>
                   <div className="flex-1">
                     <span className="font-medium text-foreground block">
-                      Talk with Gurukul
+                      {isHi ? "गुरुकुल से चैट करें" : "Talk with Gurukul"}
                     </span>
                     <span className="text-sm text-muted-foreground">
-                      Chat on WhatsApp
+                      {isHi ? "व्हाट्सएप पर संदेश भेजें" : "Chat on WhatsApp"}
                     </span>
                   </div>
                   <svg
@@ -134,7 +144,7 @@ export function FloatingAssistant() {
 
                 {/* Call */}
                 <a
-                  href={`tel:${phoneNumber.replace(/\s/g, "")}`}
+                  href={`tel:${phoneNumber.replace(/\s+/g, "")}`}
                   className="flex items-center gap-4 p-4 rounded-xl bg-muted/50 border border-border hover:bg-muted transition-colors group"
                 >
                   <div className="w-10 h-10 rounded-full bg-saffron/20 flex items-center justify-center">
@@ -142,7 +152,7 @@ export function FloatingAssistant() {
                   </div>
                   <div className="flex-1">
                     <span className="font-medium text-foreground block">
-                      Call Us
+                      {isHi ? "हमें कॉल करें" : "Call Us"}
                     </span>
                     <span className="text-sm text-muted-foreground">
                       {phoneNumber}
@@ -160,9 +170,9 @@ export function FloatingAssistant() {
                   </div>
                   <div className="flex-1">
                     <span className="font-medium text-foreground block">
-                      Email Us
+                      {isHi ? "हमें ईमेल करें" : "Email Us"}
                     </span>
-                    <span className="text-sm text-muted-foreground">
+                    <span className="text-sm text-muted-foreground truncate max-w-[150px] sm:max-w-none">
                       {emailAddress}
                     </span>
                   </div>
@@ -173,7 +183,9 @@ export function FloatingAssistant() {
             {/* Footer */}
             <div className="px-6 py-4 bg-muted/30 border-t border-border">
               <p className="text-xs text-muted-foreground text-center">
-                Response time: Within 24 hours
+                {isHi
+                  ? "प्रतिक्रिया समय: 24 घंटे के भीतर"
+                  : "Response time: Within 24 hours"}
               </p>
             </div>
           </motion.div>
@@ -183,10 +195,16 @@ export function FloatingAssistant() {
       {/* Floating Button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="relative w-16 h-16 rounded-full bg-gradient-to-br from-saffron to-saffron/80 shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center group"
+        className="relative w-16 h-16 rounded-full bg-gradient-to-br from-saffron to-saffron/80 shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center group cursor-pointer"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        aria-label={isOpen ? "Close assistant" : tooltips[tooltipIndex]}
+        aria-label={
+          isOpen
+            ? isHi
+              ? "सहायक बंद करें"
+              : "Close assistant"
+            : tooltips[language] || tooltips.en
+        }
       >
         {/* Pulse Animation */}
         <motion.div
@@ -202,7 +220,7 @@ export function FloatingAssistant() {
           }}
         />
 
-        {/* Icon */}
+        {/* Icon Toggle */}
         <AnimatePresence mode="wait">
           {isOpen ? (
             <motion.div
@@ -224,7 +242,6 @@ export function FloatingAssistant() {
               className="relative"
             >
               <LotusIcon className="w-7 h-7 text-white" />
-              {/* Small WhatsApp indicator */}
               <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-green-500 flex items-center justify-center border-2 border-saffron">
                 <WhatsAppIcon className="w-2.5 h-2.5 text-white" />
               </div>
@@ -232,10 +249,10 @@ export function FloatingAssistant() {
           )}
         </AnimatePresence>
 
-        {/* Tooltip */}
+        {/* 🚀 THE COMPILE FIX: Fall back to English tooltips if the dictionary encounters an unmatched string parameter query */}
         {!isOpen && (
           <div className="absolute right-full mr-4 px-3 py-2 bg-foreground text-background text-sm rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-            {tooltips[tooltipIndex]}
+            {tooltips[language] || tooltips.en}
             <div className="absolute top-1/2 -right-1 -translate-y-1/2 w-2 h-2 bg-foreground rotate-45" />
           </div>
         )}

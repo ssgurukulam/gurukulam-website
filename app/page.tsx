@@ -19,10 +19,10 @@ export default async function HomePage() {
     <>
       <HeroSection language={language} />
       <IntroSection language={language} />
+      <CurriculumSection language={language} />
       <WhyChooseSection language={language} />
       <TeachersSection language={language} />
       <TestimonialsSection language={language} />
-      <CurriculumSection language={language} />
       <GallerySection language={language} />
       <DailyLifeSection language={language} />
       <CTASection language={language} />

@@ -63,12 +63,12 @@ export function TeachersSection({ language }: TeachersSectionProps) {
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-90" />
 
                     <div className="absolute bottom-4 left-4 right-4 z-10">
-                      <div className="text-xs text-primary font-medium mb-1">
-                        {localized?.specialty}
-                      </div>
                       <h3 className="text-lg font-semibold text-foreground">
                         {localized?.name}
                       </h3>
+                      <span className="inline-block px-3 py-1 mb-2 text-[10px] sm:text-xs font-extrabold tracking-wider uppercase bg-primary/10 text-primary rounded-full border border-primary/20">
+                        {localized?.specialty}
+                      </span>
                     </div>
                   </div>
 
@@ -76,7 +76,7 @@ export function TeachersSection({ language }: TeachersSectionProps) {
                   <div className="p-6 flex flex-col flex-grow justify-between gap-4">
                     <div>
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-sm font-medium text-primary">
+                        <span className="inline-block px-3 py-1 mb-2 text-[10px] sm:text-xs font-bold tracking-wider uppercase bg-primary/10 text-primary rounded-full border border-primary/20">
                           {localized?.title}
                         </span>
                         <span className="text-xs text-muted-foreground">

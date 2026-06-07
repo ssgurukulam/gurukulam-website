@@ -36,9 +36,9 @@ export default function TeachersPage() {
                   : "Learn from the Masters"}
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Our distinguished faculty brings decades of traditional wisdom,
-                deep shastric expertise, and modern educational methodologies to
-                direct your paths.
+                {language == "hi"
+                  ? "हमारे प्रतिष्ठित आचार्य अपने संबंधित क्षेत्रों में दशकों का अनुभव और गहन विशेषज्ञता प्रदान करते हैं।"
+                  : "Our distinguished faculty brings decades of experience and deep expertise in their respective fields."}
               </p>
             </div>
           </FadeIn>

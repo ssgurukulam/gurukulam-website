@@ -104,24 +104,23 @@ export function Header() {
                 priority
               />
             </div>
-            <div className="space-y-0.5 sm:space-y-1">
-              <h1 className="text-lg sm:text-3xl font-bold tracking-tight text-foreground font-cormorant leading-none">
+
+            <div className="grid grid-cols-1 w-full text-center md:text-left justify-items-center md:justify-items-start">
+              <h1 className="text-lg sm:text-3xl font-bold tracking-tight text-foreground font-cormorant leading-none text-center md:text-left">
                 {isHi ? "शून्य शिखर गुरुकुलम्" : "Shoonya Shikhar Gurukulam"}
               </h1>
-              {/* <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-primary font-sans">
+
+              {/* 🎯 Centered Sub-Branding Target Ribbon Text Block */}
+              <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-primary font-sans text-center md:text-left mt-1.5 sm:mt-2 w-full">
                 {isHi
-                  ? "सा विद्या या विमुक्तये । — सच्ची शिक्षा वही है जो मुक्त करे।"
-                  : "सा विद्या या विमुक्तये । — True wisdom leads to liberation."}
-              </p> */}
-              <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-primary font-sans">
-                {isHi
-                  ? "विद्या, वीरता और विवेक का गुरुकुल"
+                  ? '"विद्या, वीरता और विवेक का गुरुकुल"'
                   : "Gurukul of knowledge, bravery and wisdom"}
               </p>
-              <p className="text-xs text-muted-foreground leading-relaxed hidden md:block max-w-xl">
+
+              <p className="text-xs text-muted-foreground leading-relaxed hidden md:block max-w-xl text-center md:text-left mt-1">
                 {isHi
-                  ? "प्राचीन भारतीय संस्कृति, योग, ध्यान, मार्शल आर्ट और अत्याधुनिक कंप्यूटर विज्ञान शिक्षा का एक अनुपम संगम।"
-                  : "Bridging timeless shastric discipline, meditative insight, self-defense systems, and computing fluency."}
+                  ? "प्रत्येक विद्यार्थी का शारीरिक, मानसिक, बौद्धिक एवं आध्यात्मिक रूप से सशक्तिकरण |"
+                  : "Empowerment of every student physically, mentally, intellectually and spiritually."}
               </p>
             </div>
           </Link>
@@ -138,6 +137,7 @@ export function Header() {
               </Button>
             </Link>
 
+            {/* Desktop Only Side-Tray Buttons */}
             <div className="hidden sm:flex items-center gap-1.5 border-l border-border pl-3">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -159,7 +159,7 @@ export function Header() {
                   <DropdownMenuItem
                     onClick={() => setLanguage("en")}
                     className={cn(
-                      "cursor-pointer rounded-lg text-xs font-semibold",
+                      "cursor-pointer rounded-lg text-xs font-semibold hover:text-primary hover:bg-primary/5 transition-colors",
                       language === "en" && "text-primary bg-primary/5",
                     )}
                   >
@@ -168,7 +168,7 @@ export function Header() {
                   <DropdownMenuItem
                     onClick={() => setLanguage("hi")}
                     className={cn(
-                      "cursor-pointer rounded-lg text-xs font-semibold",
+                      "cursor-pointer rounded-lg text-xs font-semibold hover:text-primary hover:bg-primary/5 transition-colors",
                       language === "hi" && "text-primary bg-primary/5",
                     )}
                   >
@@ -196,17 +196,18 @@ export function Header() {
         </div>
       </div>
 
-      {/* 🧭 NAVIGATION ROW */}
-      <div className="w-full bg-background border-b border-border/40 relative z-20 sticky top-0 backdrop-blur-md bg-opacity-95">
+      {/* 🧭 NAVIGATION ROW 
+    🚀 FIX: Added "bg-muted/40 backdrop-blur-md" for a highly aesthetic dark/light integrated row coloring layer */}
+      <div className="w-full bg-muted/40 backdrop-blur-md border-b border-border/40 relative z-20 sticky top-0 bg-opacity-95">
         <div className="w-full px-4 sm:px-6 lg:px-8 flex items-center justify-center h-14">
-          {/* Desktop Horizontal View Links (Added gap-6 for breathing room between parent triggers) */}
+          {/* Desktop Horizontal View Links */}
           <div className="hidden lg:flex items-center justify-center gap-6 w-full">
             {navItems.map((item) => (
               <div key={item.name} className="relative group">
                 {item.children ? (
                   <button
                     className={cn(
-                      "flex items-center gap-1 px-2 py-1.5 text-sm font-semibold transition-all rounded-lg cursor-pointer hover:text-primary tracking-wide",
+                      "flex items-center gap-1 px-2 py-1.5 text-sm font-semibold transition-all rounded-lg cursor-pointer tracking-wide hover:text-primary hover:bg-primary/5",
                       isActive(item.href)
                         ? "text-primary bg-primary/5 px-3"
                         : "text-foreground/80",
@@ -221,7 +222,7 @@ export function Header() {
                   <Link
                     href={item.href}
                     className={cn(
-                      "text-sm font-semibold transition-colors rounded-lg block hover:text-primary tracking-wide",
+                      "text-sm font-semibold transition-colors rounded-lg block tracking-wide hover:text-primary hover:bg-primary/5",
                       isActive(item.href)
                         ? "text-primary bg-primary/5 px-3 py-1.5"
                         : "text-foreground/80 px-2 py-1.5",
@@ -247,10 +248,10 @@ export function Header() {
                             key={child.name}
                             href={child.href}
                             className={cn(
-                              "block px-4 py-2 text-xs font-semibold transition-colors rounded-lg text-center",
+                              "block px-4 py-2 text-xs font-semibold transition-colors rounded-lg text-center hover:text-primary hover:bg-primary/5",
                               isActive(child.href)
                                 ? "text-primary bg-primary/5 font-semibold"
-                                : "text-muted-foreground hover:text-primary hover:bg-muted/5",
+                                : "text-muted-foreground",
                             )}
                           >
                             {child.name}
@@ -264,17 +265,55 @@ export function Header() {
             ))}
           </div>
 
-          {/* Mobile Menu Controls */}
+          {/* Mobile Menu Controls 
+              🚀 MOBILE SELECTOR FIX: Integrated matching dropdown-menu action trigger directly into the sticky action strip for perfect phone viewing */}
           <div className="lg:hidden flex items-center justify-between w-full">
             <span className="text-xs font-bold uppercase tracking-wider text-primary">
               {isHi ? "गुरुकुल नेविगेशन" : "Gurukulam Navigation"}
             </span>
+
             <div className="flex items-center gap-1">
+              {/* Mobile Adaptive Language Dropdown Trigger */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-9 w-9 text-foreground/70 hover:text-primary"
+                  >
+                    <Languages className="w-4 h-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent
+                  align="end"
+                  className="bg-popover border-border/50 rounded-xl p-1 shadow-lg z-50"
+                >
+                  <DropdownMenuItem
+                    onClick={() => setLanguage("en")}
+                    className={cn(
+                      "cursor-pointer rounded-lg text-xs font-semibold hover:text-primary hover:bg-primary/5",
+                      language === "en" && "text-primary bg-primary/5",
+                    )}
+                  >
+                    English
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={() => setLanguage("hi")}
+                    className={cn(
+                      "cursor-pointer rounded-lg text-xs font-semibold hover:text-primary hover:bg-primary/5",
+                      language === "hi" && "text-primary bg-primary/5",
+                    )}
+                  >
+                    हिंदी
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+
               {mounted && (
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="h-9 w-9 text-foreground/70"
+                  className="h-9 w-9 text-foreground/70 hover:text-primary"
                   onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 >
                   {theme === "dark" ? (
@@ -284,10 +323,11 @@ export function Header() {
                   )}
                 </Button>
               )}
+
               <Button
                 variant="ghost"
                 size="icon"
-                className="text-foreground/80 h-9 w-9"
+                className="text-foreground/80 h-9 w-9 hover:text-primary"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               >
                 {isMobileMenuOpen ? (
@@ -319,7 +359,7 @@ export function Header() {
                         key={child.name}
                         href={child.href}
                         className={cn(
-                          "block px-3 py-2 rounded-lg text-xs font-bold transition-colors text-center",
+                          "block px-3 py-2 rounded-lg text-xs font-bold transition-colors text-center hover:text-primary hover:bg-primary/5",
                           isActive(child.href)
                             ? "text-primary bg-primary/5"
                             : "text-foreground/70",
@@ -332,7 +372,7 @@ export function Header() {
                     <Link
                       href={item.href}
                       className={cn(
-                        "block px-3 py-2 rounded-lg text-xs font-bold transition-colors text-center",
+                        "block px-3 py-2 rounded-lg text-xs font-bold transition-colors text-center hover:text-primary hover:bg-primary/5",
                         isActive(item.href)
                           ? "text-primary bg-primary/5"
                           : "text-foreground/70",
@@ -346,14 +386,14 @@ export function Header() {
               <div className="col-span-2 h-px bg-border/60 my-2" />
               <div className="col-span-2 flex items-center justify-between px-3">
                 <span className="text-xs font-bold text-muted-foreground">
-                  {isHi ? "भाषा बदलें:" : "Language:"}
+                  {isHi ? "सक्रिय भाषा:" : "Active Language:"}
                 </span>
                 <div className="flex gap-2">
                   <Button
                     size="sm"
                     variant={language === "hi" ? "default" : "outline"}
                     onClick={() => setLanguage("hi")}
-                    className="h-7 text-[10px] font-bold rounded-md px-3"
+                    className="h-7 text-[10px] font-bold rounded-md px-3 cursor-pointer"
                   >
                     हिंदी
                   </Button>
@@ -361,7 +401,7 @@ export function Header() {
                     size="sm"
                     variant={language === "en" ? "default" : "outline"}
                     onClick={() => setLanguage("en")}
-                    className="h-7 text-[10px] font-bold rounded-md px-3"
+                    className="h-7 text-[10px] font-bold rounded-md px-3 cursor-pointer"
                   >
                     English
                   </Button>
