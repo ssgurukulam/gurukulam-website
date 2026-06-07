@@ -1,17 +1,16 @@
 "use client";
 
-import { Metadata } from "next";
 import { Section, SectionHeader, FadeIn } from "@/components/ui/section";
 import { CTASection } from "@/components/sections/cta-section";
 import { Quote } from "lucide-react";
 import testimonials from "@/content/testimonials.json";
 import React, { useEffect, useState } from "react";
 
-export const metadata: Metadata = {
-  title: "Testimonials / अनुभूतियाँ",
-  description:
-    "Read stories from our alumni about their transformative journey at Shoonya Shikhar Gurukulam.",
-};
+// export const metadata: Metadata = {
+//   title: "Testimonials / अनुभूतियाँ",
+//   description:
+//     "Read stories from our alumni about their transformative journey at Shoonya Shikhar Gurukulam.",
+// };
 
 export default function TestimonialsPage() {
   // 🚀 THE HYDRATION FIX: Shift dynamic cookie lookups to standard client-safe states
