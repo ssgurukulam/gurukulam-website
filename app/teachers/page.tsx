@@ -1,20 +1,24 @@
-import { Metadata } from "next";
+"use client";
+
 import Image from "next/image";
-import { cookies } from "next/headers";
+import React, { useEffect, useState } from "react";
 import { Section, FadeIn } from "@/components/ui/section";
 import { CTASection } from "@/components/sections/cta-section";
 import teachers from "@/content/teachers.json";
 
-export const metadata: Metadata = {
-  title: "Our Teachers | Shoonya Shikhar Gurukulam",
-  description:
-    "Meet the distinguished Gurus and teachers of Shoonya Shikhar Gurukulam who guide students on their educational journey.",
-};
+export default function TeachersPage() {
+  // 🚀 THE HYDRATION FIX: Shift dynamic cookie lookups to standard client-safe states
+  // to completely isolate script injections from Next.js server render passes
+  const [language, setLanguage] = useState("en");
 
-export default async function TeachersPage() {
-  const cookieStore = await cookies();
-  const language = cookieStore.get("lang")?.value || "en";
-  const langKey = (language === "hi" ? "hi" : "en") as "en" | "hi";
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      const match = document.cookie.match(new RegExp("(^| )lang=([^;]+)"));
+      if (match && match[2]) {
+        setLanguage(match[2]);
+      }
+    }
+  }, []);
 
   return (
     <>
@@ -24,10 +28,10 @@ export default async function TeachersPage() {
           <FadeIn>
             <div className="max-w-3xl mx-auto text-center">
               <span className="inline-block px-4 py-1.5 mb-4 text-xs font-medium tracking-wider uppercase bg-primary/10 text-primary rounded-full">
-                {langKey === "hi" ? "हमारे पूज्य गुरु" : "Our Revered Gurus"}
+                {language === "hi" ? "हमारे पूज्य गुरु" : "Our Revered Gurus"}
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground mb-6 tracking-tight">
-                {langKey === "hi"
+                {language === "hi"
                   ? "गुरुओं से सीखें"
                   : "Learn from the Masters"}
               </h1>
@@ -45,8 +49,7 @@ export default async function TeachersPage() {
       <Section className="bg-background py-20">
         <div className="container mx-auto px-4 max-w-5xl space-y-24">
           {teachers.map((teacher, index) => {
-            const localized = teacher[langKey];
-            // Alternates direction layout per item index to build design visual interest
+            const localized = language == "en" ? teacher?.en : teacher?.hi;
             const isEven = index % 2 === 0;
 
             return (
@@ -56,8 +59,11 @@ export default async function TeachersPage() {
                     isEven ? "" : "md:flex-row-reverse"
                   }`}
                 >
-                  {/* Left Column: Image and Badges Block */}
-                  <div className="w-full md:w-2/5 max-w-sm shrink-0 mx-auto md:mx-0 sticky top-24">
+                  {/* Left Column: Image and Badges Block 
+                      🚀 THE MOBILE FIX: Swapped "sticky top-24" for "md:sticky md:top-24".
+                      This tells the browser to stay static on mobile, removing the sticky glitch entirely, 
+                      while cleanly maintaining the desktop scroll effect.*/}
+                  <div className="w-full md:w-2/5 max-w-sm shrink-0 mx-auto md:mx-0 md:sticky md:top-24">
                     <div className="aspect-[4/5] bg-muted rounded-2xl overflow-hidden relative shadow-md border border-border/40 group">
                       {teacher.image ? (
                         <Image

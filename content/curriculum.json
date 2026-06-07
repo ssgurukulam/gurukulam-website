@@ -1,8 +1,11 @@
 [
   {
     "id": "meditation",
-    "title": "Meditation & Dhyana",
-    "shortDescription": "Discover inner peace through ancient meditation techniques and mindfulness practices.",
+    "title": { "en": "Meditation & Dhyana", "hi": "ध्यान योग एवं मन विज्ञान" },
+    "shortDescription": {
+      "en": "Discover inner peace through ancient meditation techniques and mindfulness practices.",
+      "hi": "प्राचीन वैज्ञानिक ध्यान पद्धतियों और आत्म-जागरूकता द्वारा मानसिक शांति प्राप्त करें।"
+    },
     "description": "Explore various meditation traditions including Vipassana, Transcendental Meditation, and Vedantic contemplation. Learn to cultivate stillness and clarity of mind.",
     "icon": "meditation",
     "duration": "1-3 years",
@@ -17,8 +20,14 @@
   },
   {
     "id": "martial-arts",
-    "title": "Martial Arts",
-    "shortDescription": "Train in traditional Indian martial arts including Kalaripayattu and self-defense.",
+    "title": {
+      "en": "Martial Arts & Self-Defense",
+      "hi": "पारंपरिक मार्शल आर्ट्स (आत्मरक्षा)"
+    },
+    "shortDescription": {
+      "en": "Train in traditional Indian martial arts including Kalaripayattu and self-defense.",
+      "hi": "शारीरिक सुदृढ़ता और आत्मरक्षा के लिए कलरीपायट्टु एवं पारंपरिक द्वंद्व कला का अभ्यास।"
+    },
     "description": "Learn the ancient Indian martial art of Kalaripayattu along with weapons training, self-defense, and physical conditioning that builds discipline and inner strength.",
     "icon": "sword",
     "duration": "3-5 years",
@@ -33,8 +42,14 @@
   },
   {
     "id": "computer-education",
-    "title": "Computer Education",
-    "shortDescription": "Modern technology education balanced with traditional values and ethics.",
+    "title": {
+      "en": "Computer Science & Coding",
+      "hi": "अत्याधुनिक कंप्यूटर विज्ञान एवं शिक्षा"
+    },
+    "shortDescription": {
+      "en": "Modern technology education balanced with traditional values and ethics.",
+      "hi": "नैतिक मूल्यों, सुरक्षित उपयोग सिद्धांतों एवं कोडिंग के साथ तकनीकी शिक्षा।"
+    },
     "description": "Learn programming, digital literacy, and modern technology skills while maintaining ethical awareness and mindful use of technology.",
     "icon": "computer",
     "duration": "2-3 years",
@@ -49,8 +64,14 @@
   },
   {
     "id": "personality-development",
-    "title": "Personality Development",
-    "shortDescription": "Build confidence, communication skills, and leadership qualities.",
+    "title": {
+      "en": "Personality Development",
+      "hi": "व्यक्तित्व विकास एवं नेतृत्व क्षमता"
+    },
+    "shortDescription": {
+      "en": "Build confidence, communication skills, and leadership qualities.",
+      "hi": "विद्यार्थियों में आत्मविश्वास, कुशल संवाद शैली एवं नेतृत्व गुणों का विकास।"
+    },
     "description": "Holistic personality development program focusing on public speaking, leadership, emotional intelligence, and interpersonal skills rooted in Indian wisdom.",
     "icon": "star",
     "duration": "1-2 years",
@@ -65,8 +86,14 @@
   },
   {
     "id": "spiritual-learning",
-    "title": "Spiritual Learning",
-    "shortDescription": "Deep spiritual education in philosophy, rituals, and inner transformation.",
+    "title": {
+      "en": "Spiritual & Value Learning",
+      "hi": "आध्यात्मिक एवं संस्कारवान शिक्षण"
+    },
+    "shortDescription": {
+      "en": "Deep spiritual education in philosophy, rituals, and inner transformation.",
+      "hi": "भारतीय दर्शन, संस्कृति, जीवन मूल्यों एवं चरित्र निर्माण का गूढ़ शिक्षण।"
+    },
     "description": "Advanced spiritual curriculum covering Indian philosophy, ritual practices, temple traditions, and the path to self-realization under guidance of experienced Gurus.",
     "icon": "flame",
     "duration": "Lifelong",

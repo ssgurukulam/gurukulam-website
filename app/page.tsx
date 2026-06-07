@@ -18,13 +18,13 @@ export default async function HomePage() {
   return (
     <>
       <HeroSection language={language} />
-      <TeachersSection language={language} />
-      <GallerySection language={language} />
       <IntroSection language={language} />
-      <CurriculumSection />
-      <WhyChooseSection />
-      <DailyLifeSection />
-      <TestimonialsSection />
+      <WhyChooseSection language={language} />
+      <TeachersSection language={language} />
+      <TestimonialsSection language={language} />
+      <CurriculumSection language={language} />
+      <GallerySection language={language} />
+      <DailyLifeSection language={language} />
       <CTASection language={language} />
     </>
   );

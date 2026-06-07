@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
@@ -16,13 +18,22 @@ interface TeachersSectionProps {
 
 export function TeachersSection({ language }: TeachersSectionProps) {
   const langKey = (language === "hi" ? "hi" : "en") as "en" | "hi";
+  const isHi = langKey === "hi";
 
   return (
     <Section className="bg-card">
       <SectionHeader
-        badge="Our Gurus"
-        title="Learn from the Masters"
-        subtitle="Our distinguished faculty brings decades of experience and deep expertise in their respective fields."
+        badge={isHi ? "हमारे पूज्य आचार्य" : "Our Gurus"}
+        title={
+          isHi
+            ? "आचार्यों से प्राप्त करें मार्गदर्शन"
+            : "Learn from the Masters"
+        }
+        subtitle={
+          isHi
+            ? "हमारे प्रतिष्ठित आचार्य अपने संबंधित क्षेत्रों में दशकों का अनुभव और गहन विशेषज्ञता प्रदान करते हैं।"
+            : "Our distinguished faculty brings decades of experience and deep expertise in their respective fields."
+        }
       />
 
       <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -38,7 +49,7 @@ export function TeachersSection({ language }: TeachersSectionProps) {
                     {teacher.image ? (
                       <Image
                         src={teacher.image}
-                        alt={localized?.name || "Teacher"}
+                        alt={localized?.name || (isHi ? "आचार्य" : "Teacher")}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className="object-fit group-hover:scale-105 transition-transform duration-500"
@@ -72,9 +83,7 @@ export function TeachersSection({ language }: TeachersSectionProps) {
                           {localized?.experience}
                         </span>
                       </div>
-                      {/* Clean plain fallback view preview text snippet */}
                       <p className="text-sm text-muted-foreground line-clamp-2">
-                        {/* Strips out common basic HTML tags if any exist in data preview */}
                         {localized?.description?.replace(/<[^>]*>/g, "")}
                       </p>
                     </div>
@@ -83,7 +92,7 @@ export function TeachersSection({ language }: TeachersSectionProps) {
                       href="/teachers"
                       className="text-xs font-semibold text-primary hover:underline flex items-center gap-1 self-start pt-1"
                     >
-                      {langKey === "hi" ? "और जानें" : "Read Full Bio"} →
+                      {isHi ? "पूर्ण परिचय देखें" : "Read Full Bio"} →
                     </Link>
                   </div>
                 </div>
@@ -99,7 +108,7 @@ export function TeachersSection({ language }: TeachersSectionProps) {
             size="lg"
             className="gap-2 border-primary/30 hover:bg-primary/5"
           >
-            Meet All Teachers
+            {isHi ? "सभी आचार्यों से मिलें" : "Meet All Teachers"}
             <ArrowRight className="w-4 h-4" />
           </Button>
         </Link>

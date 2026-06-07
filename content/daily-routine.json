@@ -1,62 +1,110 @@
 [
   {
     "time": "4:30 AM",
-    "activity": "Brahma Muhurta",
-    "description": "Wake up during the auspicious time for spiritual practice"
+    "activity": { "en": "Brahma Muhurta", "hi": "ब्रह्ममुहूर्त जागरण" },
+    "description": {
+      "en": "Wake up during the auspicious time for spiritual practice",
+      "hi": "ईश्वर चिंतन, आत्म-निरीक्षण एवं दिन की सात्विक शुरुआत।"
+    }
   },
   {
     "time": "5:00 AM",
-    "activity": "Meditation & Prayers",
-    "description": "Morning meditation and traditional prayers"
+    "activity": {
+      "en": "Meditation & Prayers",
+      "hi": "ध्यान एवं दैनिक प्रार्थना"
+    },
+    "description": {
+      "en": "Morning meditation and traditional prayers",
+      "hi": "मानसिक शांति, एकाग्रता और सकारात्मक ऊर्जा के लिए सामूहिक प्रार्थना।"
+    }
   },
   {
     "time": "6:00 AM",
-    "activity": "Yoga & Pranayama",
-    "description": "Physical practice and breathing exercises"
+    "activity": { "en": "Yoga & Pranayama", "hi": "योगासन एवं प्राणायाम" },
+    "description": {
+      "en": "Physical practice and breathing exercises",
+      "hi": "शारीरिक स्वास्थ्य, लचीलेपन और श्वसन संतुलन के लिए योगाभ्यास।"
+    }
   },
   {
     "time": "7:30 AM",
-    "activity": "Breakfast",
-    "description": "Sattvic vegetarian meal"
+    "activity": { "en": "Breakfast", "hi": "अल्पाहार (प्रातः नाश्ता)" },
+    "description": {
+      "en": "Sattvic vegetarian meal",
+      "hi": "शरीर के पोषण के लिए पूर्णतः शुद्ध, सात्विक एवं शाकाहारी भोजन।"
+    }
   },
   {
     "time": "8:30 AM",
-    "activity": "Academic Classes",
-    "description": "Study according to modern education pattern"
+    "activity": {
+      "en": "Academic Classes",
+      "hi": "शैक्षणिक कक्षाएं (आधुनिक पाठ्यक्रम)"
+    },
+    "description": {
+      "en": "Study according to modern education pattern",
+      "hi": "निर्धारित शिक्षा बोर्ड के मानकों के अनुसार नियमित कक्षाओं का संचालन।"
+    }
   },
   {
     "time": "12:30 PM",
-    "activity": "Lunch & Rest",
-    "description": "Midday meal and quiet time"
+    "activity": { "en": "Lunch & Rest", "hi": "मध्याह्न भोजन एवं विश्राम" },
+    "description": {
+      "en": "Midday meal and quiet time",
+      "hi": "संतुलित दोपहर का भोजन और मस्तिष्क को आराम देने के लिए शांत समय।"
+    }
   },
   {
     "time": "2:30 PM",
-    "activity": "Practical Training",
-    "description": "Martial arts, computer classes, or skill development"
+    "activity": {
+      "en": "Practical Training",
+      "hi": "व्यावहारिक एवं तकनीकी प्रशिक्षण"
+    },
+    "description": {
+      "en": "Martial arts, computer classes, or skill development",
+      "hi": "कंप्यूटर विज्ञान, कोडिंग, मार्शल आर्ट्स (आत्मरक्षा) तथा कौशल विकास।"
+    }
   },
   {
     "time": "5:00 PM",
-    "activity": "Self Analysis",
-    "description": "Gentle time for yourself to do self introspection"
+    "activity": { "en": "Self Analysis", "hi": "आत्म-विश्लेषण एवं स्वाध्याय" },
+    "description": {
+      "en": "Gentle time for yourself to do self introspection",
+      "hi": "स्वयं के विचारों को समझने और व्यक्तिगत उन्नति के लिए एकांत समय।"
+    }
   },
   {
     "time": "6:00 PM",
-    "activity": "Sandhya Vandana",
-    "description": "Evening prayers and rituals"
+    "activity": { "en": "Sandhya Vandana", "hi": "संध्या वंदना एवं आरती" },
+    "description": {
+      "en": "Evening prayers and rituals",
+      "hi": "दिनभर के मानसिक भटकाव को शांत करने के लिए सामूहिक संध्या आरती।"
+    }
   },
   {
     "time": "7:00 PM",
-    "activity": "Dinner",
-    "description": "Light evening meal"
+    "activity": { "en": "Dinner", "hi": "रात्रि भोजन" },
+    "description": {
+      "en": "Light evening meal",
+      "hi": "सुपाच्य एवं हल्का सात्विक भोजन।"
+    }
   },
   {
     "time": "8:00 PM",
-    "activity": "Self Study",
-    "description": "Group discussions, self-study, or cultural activities"
+    "activity": {
+      "en": "Self Study",
+      "hi": "स्वाध्याय एवं सांस्कृतिक गतिविधियाँ"
+    },
+    "description": {
+      "en": "Group discussions, self-study, or cultural activities",
+      "hi": "दैनिक पाठों की पुनरावृत्ति, सामूहिक चर्चा अथवा सांस्कृतिक अभ्यास।"
+    }
   },
   {
     "time": "11:00 PM",
-    "activity": "Rest",
-    "description": "Lights out for proper rest"
+    "activity": { "en": "Rest", "hi": "पूर्ण विश्राम (शयन)" },
+    "description": {
+      "en": "Lights out for proper rest",
+      "hi": "अगले दिन की ऊर्जा के लिए समय पर शयन (लाइट्स आउट)।"
+    }
   }
 ]

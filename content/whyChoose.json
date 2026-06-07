@@ -1,0 +1,82 @@
+{
+  "badge": {
+    "en": "Why Choose Us",
+    "hi": "मुख्य विशेषताएं"
+  },
+  "title": {
+    "en": "The Gurukulam Difference",
+    "hi": "गुरुकुल शिक्षा पद्धति की विशिष्टता"
+  },
+  "subtitle": {
+    "en": "Discover what makes our traditional approach to education unique, transformative, and state-aligned for 360° human development.",
+    "hi": "जानिए क्यों हमारी पारंपरिक पद्धति आधुनिक युग में विद्यार्थियों के सर्वांगीण विकास के लिए सर्वोकृष्ट एवं प्रासंगिक है।"
+  },
+  "features": [
+    {
+      "icon": "graduation",
+      "title": {
+        "en": "Authentic Gurukul System",
+        "hi": "प्रामाणिक गुरुकुल आवासीय पद्धति"
+      },
+      "desc": {
+        "en": "Experience traditional residential learning where students live with teachers, fostering deep bonds, real character building, and moral discipline.",
+        "hi": "आचार्य एवं शिष्यों का सह-निवास, जो कठोर अनुशासन, उच्च संस्कार, नैतिक शुचिता और सुदृढ़ चरित्र निर्माण सुनिश्चित करता है।"
+      }
+    },
+    {
+      "icon": "users",
+      "title": {
+        "en": "Expert Gurus & Masters",
+        "hi": "विषय विशेषज्ञ एवं निष्ठावान आचार्य"
+      },
+      "desc": {
+        "en": "Learn from highly qualified teachers who have dedicated their lives to mastering and preserving traditional Indian knowledge alongside modern standards.",
+        "hi": "प्राचीन भारतीय ज्ञान प्रणालियों तथा आधुनिक वैज्ञानिक विषयों में पूर्ण पारंगत, समर्पित एवं अनुभवी आचार्यों द्वारा प्रत्यक्ष शिक्षण।"
+      }
+    },
+    {
+      "icon": "nature",
+      "title": {
+        "en": "Serene Natural Setting",
+        "hi": "प्राकृतिक एवं कोलाहलमुक्त परिवेश"
+      },
+      "desc": {
+        "en": "Our vision establishes a spacious campus in the peaceful foothills of nature at Karauli, where clean air, strict discipline, daily values, and deep study align flawlessly.",
+        "hi": "करौली की शांत तलहटी में स्थित प्राकृतिक परिसर, जहाँ स्वच्छ वातावरण, संस्कार, ध्यान और गंभीर अध्ययन का अद्भुत समन्वय है।"
+      }
+    },
+    {
+      "icon": "heart",
+      "title": {
+        "en": "Holistic 360° Development",
+        "hi": "विद्यार्थियों का सर्वांगीण (360°) विकास"
+      },
+      "desc": {
+        "en": "We nurture the physical body, cognitive mind, and inner spirit systematically through classical yoga, intensive meditation, and core academics.",
+        "hi": "शारीरिक सौष्ठव, मानसिक सुदृढ़ता और आत्मिक उन्नति के लिए योग, ध्यान, शास्त्र एवं आधुनिक शिक्षा का संतुलित समावेश।"
+      }
+    },
+    {
+      "icon": "book",
+      "title": {
+        "en": "Balanced State Curriculum",
+        "hi": "पारंपरिक एवं आधुनिक शिक्षा का संतुलन"
+      },
+      "desc": {
+        "en": "A unique integration of classical wisdom—including Sanskrit fundamentals—perfectly balanced with advanced computing and core mathematics.",
+        "hi": "संस्कृत, नैतिक आचार और वैदिक मूल्यों का कंप्यूटर विज्ञान, कोडिंग, अंग्रेजी और आधुनिक गणितीय विषयों के साथ अनूठा मेल।"
+      }
+    },
+    {
+      "icon": "shield",
+      "title": {
+        "en": "Values & Civic Accountability",
+        "hi": "नैतिक मूल्य एवं राष्ट्र-निर्माण भावना"
+      },
+      "desc": {
+        "en": "Strong structural emphasis on ethics, absolute respect for elders, community service metrics, and national accountability values.",
+        "hi": "विद्यार्थियों में बड़ों के प्रति सम्मान, सामाजिक उत्तरदायित्व, देशप्रेम और सनातन सांस्कृतिक जीवन मूल्यों का प्रकटीकरण।"
+      }
+    }
+  ]
+}

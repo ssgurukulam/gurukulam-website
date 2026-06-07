@@ -4,7 +4,15 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Sun, Moon, ChevronDown, Languages } from "lucide-react";
+import {
+  Menu,
+  X,
+  Sun,
+  Moon,
+  ChevronDown,
+  Languages,
+  FileText,
+} from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -30,7 +38,6 @@ const navItemsEn = [
   { name: "Curriculum", href: "/curriculum" },
   { name: "Teachers", href: "/teachers" },
   { name: "Gallery", href: "/gallery" },
-  // { name: "Events", href: "/events" },
   { name: "Testimonials", href: "/testimonials" },
   { name: "Admissions", href: "/admissions" },
   { name: "Contact", href: "/contact" },
@@ -49,30 +56,24 @@ const navItemsHi = [
   { name: "पाठ्यक्रम", href: "/curriculum" },
   { name: "शिक्षक", href: "/teachers" },
   { name: "गैलरी", href: "/gallery" },
-  // { name: "कार्यक्रम", href: "/events" },
   { name: "प्रशंसापत्र", href: "/testimonials" },
   { name: "प्रवेश", href: "/admissions" },
   { name: "संपर्क", href: "/contact" },
 ];
 
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const pathname = usePathname();
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
   const { language, setLanguage } = useLanguage();
+  const isHi = language === "hi";
 
-  const navItems = language === "en" ? navItemsEn : navItemsHi;
+  const navItems = isHi ? navItemsHi : navItemsEn;
 
   useEffect(() => {
     setMounted(true);
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -87,79 +88,157 @@ export function Header() {
   const currentLanguageLabel = language === "en" ? "English" : "हिंदी";
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-sm border-b border-border"
-          : "bg-transparent",
-      )}
-    >
-      <div className="container mx-auto px-4">
-        <nav className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 rounded-full overflow-hidden bg-primary/10 flex items-center justify-center border-2 border-primary/30 group-hover:border-primary transition-colors relative">
+    <div className="w-full bg-background flex flex-col relative">
+      {/* 🏛️ TOP MAIN BANNER */}
+      <div className="w-full bg-card border-b border-border/50 py-4 sm:py-5 relative z-30">
+        <div className="w-full px-4 sm:px-6 lg:px-8 flex flex-row items-center justify-between gap-4">
+          {/* Logo & Identity */}
+          <Link href="/" className="flex items-center gap-3 sm:gap-5 group">
+            <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-full overflow-hidden bg-primary/10 flex items-center justify-center border-2 border-primary/20 shrink-0 relative">
               <Image
                 src="/images/logo.png"
-                alt="Shoonya Shikhar Logo"
-                width={48}
-                height={48}
+                alt="Shoonya Shikhar Emblem Logo"
+                width={80}
+                height={80}
                 className="object-cover"
+                priority
               />
             </div>
-            {/* Text Branding */}
-            <div className="hidden sm:block">
-              <h1 className="text-lg font-semibold text-foreground leading-tight">
-                Shoonya Shikhar
+            <div className="space-y-0.5 sm:space-y-1">
+              <h1 className="text-lg sm:text-3xl font-bold tracking-tight text-foreground font-cormorant leading-none">
+                {isHi ? "शून्य शिखर गुरुकुलम्" : "Shoonya Shikhar Gurukulam"}
               </h1>
-              <p className="text-xs text-muted-foreground tracking-wider uppercase">
-                Gurukulam
+              {/* <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-primary font-sans">
+                {isHi
+                  ? "सा विद्या या विमुक्तये । — सच्ची शिक्षा वही है जो मुक्त करे।"
+                  : "सा विद्या या विमुक्तये । — True wisdom leads to liberation."}
+              </p> */}
+              <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-primary font-sans">
+                {isHi
+                  ? "विद्या, वीरता और विवेक का गुरुकुल"
+                  : "Gurukul of knowledge, bravery and wisdom"}
+              </p>
+              <p className="text-xs text-muted-foreground leading-relaxed hidden md:block max-w-xl">
+                {isHi
+                  ? "प्राचीन भारतीय संस्कृति, योग, ध्यान, मार्शल आर्ट और अत्याधुनिक कंप्यूटर विज्ञान शिक्षा का एक अनुपम संगम।"
+                  : "Bridging timeless shastric discipline, meditative insight, self-defense systems, and computing fluency."}
               </p>
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1">
+          {/* Right Actions */}
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+            <Link href="/admissions">
+              <Button
+                size="default"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-xs gap-1.5 px-3 sm:px-6 rounded-xl transition-all cursor-pointer text-[11px] sm:text-sm h-9 sm:h-11"
+              >
+                <FileText className="w-4 h-4 hidden sm:inline" />
+                {isHi ? "प्रवेश जानकारी" : "Admission Enquiry"}
+              </Button>
+            </Link>
+
+            <div className="hidden sm:flex items-center gap-1.5 border-l border-border pl-3">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="gap-1.5 text-foreground/80 hover:text-primary px-3 cursor-pointer rounded-lg hover:bg-primary/5 font-medium transition-colors"
+                  >
+                    <Languages className="w-4 h-4 opacity-80" />
+                    <span className="text-xs font-semibold">
+                      {currentLanguageLabel}
+                    </span>
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent
+                  align="end"
+                  className="bg-popover border-border/50 rounded-xl p-1 shadow-lg z-50"
+                >
+                  <DropdownMenuItem
+                    onClick={() => setLanguage("en")}
+                    className={cn(
+                      "cursor-pointer rounded-lg text-xs font-semibold",
+                      language === "en" && "text-primary bg-primary/5",
+                    )}
+                  >
+                    English
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={() => setLanguage("hi")}
+                    className={cn(
+                      "cursor-pointer rounded-lg text-xs font-semibold",
+                      language === "hi" && "text-primary bg-primary/5",
+                    )}
+                  >
+                    हिंदी
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+
+              {mounted && (
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="h-9 w-9 text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-lg"
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                >
+                  {theme === "dark" ? (
+                    <Sun className="w-4 h-4" />
+                  ) : (
+                    <Moon className="w-4 h-4" />
+                  )}
+                </Button>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 🧭 NAVIGATION ROW */}
+      <div className="w-full bg-background border-b border-border/40 relative z-20 sticky top-0 backdrop-blur-md bg-opacity-95">
+        <div className="w-full px-4 sm:px-6 lg:px-8 flex items-center justify-center h-14">
+          {/* Desktop Horizontal View Links (Added gap-6 for breathing room between parent triggers) */}
+          <div className="hidden lg:flex items-center justify-center gap-6 w-full">
             {navItems.map((item) => (
               <div key={item.name} className="relative group">
                 {item.children ? (
                   <button
                     className={cn(
-                      "flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors rounded-md cursor-pointer",
+                      "flex items-center gap-1 px-2 py-1.5 text-sm font-semibold transition-all rounded-lg cursor-pointer hover:text-primary tracking-wide",
                       isActive(item.href)
-                        ? "text-primary"
-                        : "text-foreground/80 hover:text-primary hover:bg-primary/5",
+                        ? "text-primary bg-primary/5 px-3"
+                        : "text-foreground/80",
                     )}
                     onMouseEnter={() => setOpenDropdown(item.name)}
                     onMouseLeave={() => setOpenDropdown(null)}
                   >
                     {item.name}
-                    <ChevronDown className="w-3 h-3" />
+                    <ChevronDown className="w-3 h-3 opacity-60 group-hover:rotate-180 transition-transform duration-200" />
                   </button>
                 ) : (
                   <Link
                     href={item.href}
                     className={cn(
-                      "px-3 py-2 text-sm font-medium transition-colors rounded-md block",
+                      "text-sm font-semibold transition-colors rounded-lg block hover:text-primary tracking-wide",
                       isActive(item.href)
-                        ? "text-primary"
-                        : "text-foreground/80 hover:text-primary hover:bg-primary/5",
+                        ? "text-primary bg-primary/5 px-3 py-1.5"
+                        : "text-foreground/80 px-2 py-1.5",
                     )}
                   >
                     {item.name}
                   </Link>
                 )}
 
-                {/* Dropdown Navigation Menu Drawer */}
                 {item.children && (
                   <AnimatePresence>
                     {openDropdown === item.name && (
                       <motion.div
-                        initial={{ opacity: 0, y: 10 }}
+                        initial={{ opacity: 0, y: 6 }}
                         animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 10 }}
-                        className="absolute top-full left-0 mt-1 bg-popover text-popover-foreground border border-border rounded-xl shadow-lg py-2 min-w-48 z-50"
+                        exit={{ opacity: 0, height: 0 }}
+                        className="absolute top-full left-1/2 -translate-x-1/2 mt-0.5 bg-popover text-popover-foreground border border-border/60 rounded-xl shadow-lg py-1.5 min-w-48 z-50 p-1"
                         onMouseEnter={() => setOpenDropdown(item.name)}
                         onMouseLeave={() => setOpenDropdown(null)}
                       >
@@ -168,7 +247,7 @@ export function Header() {
                             key={child.name}
                             href={child.href}
                             className={cn(
-                              "block px-4 py-2 text-sm transition-colors font-medium",
+                              "block px-4 py-2 text-xs font-semibold transition-colors rounded-lg text-center",
                               isActive(child.href)
                                 ? "text-primary bg-primary/5 font-semibold"
                                 : "text-muted-foreground hover:text-primary hover:bg-muted/5",
@@ -185,77 +264,41 @@ export function Header() {
             ))}
           </div>
 
-          {/* Right Side Actions */}
-          <div className="flex items-center gap-3">
-            {/* Language Toggle Menu Dropdown Trigger */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
+          {/* Mobile Menu Controls */}
+          <div className="lg:hidden flex items-center justify-between w-full">
+            <span className="text-xs font-bold uppercase tracking-wider text-primary">
+              {isHi ? "गुरुकुल नेविगेशन" : "Gurukulam Navigation"}
+            </span>
+            <div className="flex items-center gap-1">
+              {mounted && (
                 <Button
                   variant="ghost"
-                  size="sm"
-                  className="gap-2 text-foreground/80 hover:text-primary px-3 cursor-pointer rounded-lg hover:bg-primary/5 font-medium transition-colors"
+                  size="icon"
+                  className="h-9 w-9 text-foreground/70"
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 >
-                  <Languages className="w-4 h-4 opacity-80" />
-                  <span className="text-sm">{currentLanguageLabel}</span>
-                  <ChevronDown className="w-3.5 h-3.5 opacity-50" />
+                  {theme === "dark" ? (
+                    <Sun className="w-4 h-4" />
+                  ) : (
+                    <Moon className="w-4 h-4" />
+                  )}
                 </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent
-                align="end"
-                className="min-w-32 bg-popover text-popover-foreground border-border/50 rounded-xl p-1 shadow-lg z-50"
-              >
-                <DropdownMenuItem
-                  onClick={() => setLanguage("en")}
-                  className={cn(
-                    "cursor-pointer rounded-lg text-sm px-3 py-2 font-medium focus:bg-primary/5 focus:text-primary transition-colors",
-                    language === "en" && "font-bold text-primary bg-primary/5",
-                  )}
-                >
-                  English
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onClick={() => setLanguage("hi")}
-                  className={cn(
-                    "cursor-pointer rounded-lg text-sm px-3 py-2 font-medium focus:bg-primary/5 focus:text-primary transition-colors",
-                    language === "hi" && "font-bold text-primary bg-primary/5",
-                  )}
-                >
-                  हिंदी
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-
-            {/* Theme Toggle Button Icon */}
-            {mounted && (
+              )}
               <Button
                 variant="ghost"
                 size="icon"
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="text-foreground/80 hover:text-primary cursor-pointer rounded-lg hover:bg-primary/5 transition-colors"
+                className="text-foreground/80 h-9 w-9"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               >
-                {theme === "dark" ? (
-                  <Sun className="w-5 h-5" />
+                {isMobileMenuOpen ? (
+                  <X className="w-5 h-5" />
                 ) : (
-                  <Moon className="w-5 h-5" />
+                  <Menu className="w-5 h-5" />
                 )}
               </Button>
-            )}
-
-            {/* Mobile Menu Open Switcher */}
-            <Button
-              variant="ghost"
-              size="icon"
-              className="lg:hidden cursor-pointer text-foreground/80 hover:text-primary"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? (
-                <X className="w-5 h-5" />
-              ) : (
-                <Menu className="w-5 h-5" />
-              )}
-            </Button>
+            </div>
           </div>
-        </nav>
+        </div>
       </div>
 
       {/* Mobile Menu Panel Drawer */}
@@ -265,49 +308,69 @@ export function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-background border-t border-border/50"
+            className="lg:hidden bg-card border-b border-border/60 relative z-40 overflow-hidden"
           >
-            <div className="container mx-auto px-4 py-4">
-              <div className="flex flex-col gap-1">
-                {navItems.map((item) => (
-                  <div key={item.name}>
-                    {item.children ? (
-                      <>
-                        {item.children.map((child) => (
-                          <Link
-                            key={child.name}
-                            href={child.href}
-                            className={cn(
-                              "block px-4 py-3 rounded-lg transition-colors text-sm font-medium",
-                              isActive(child.href)
-                                ? "text-primary bg-primary/5 font-semibold"
-                                : "text-foreground/80 hover:text-primary hover:bg-primary/5",
-                            )}
-                          >
-                            {child.name}
-                          </Link>
-                        ))}
-                      </>
-                    ) : (
+            <div className="w-full px-4 py-4 grid grid-cols-2 gap-2">
+              {navItems.map((item) => (
+                <div key={item.name} className="col-span-1">
+                  {item.children ? (
+                    item.children.map((child) => (
                       <Link
-                        href={item.href}
+                        key={child.name}
+                        href={child.href}
                         className={cn(
-                          "block px-4 py-3 rounded-lg transition-colors text-sm font-medium",
-                          isActive(item.href)
-                            ? "text-primary bg-primary/5 font-semibold"
-                            : "text-foreground/80 hover:text-primary hover:bg-primary/5",
+                          "block px-3 py-2 rounded-lg text-xs font-bold transition-colors text-center",
+                          isActive(child.href)
+                            ? "text-primary bg-primary/5"
+                            : "text-foreground/70",
                         )}
                       >
-                        {item.name}
+                        {child.name}
                       </Link>
-                    )}
-                  </div>
-                ))}
+                    ))
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className={cn(
+                        "block px-3 py-2 rounded-lg text-xs font-bold transition-colors text-center",
+                        isActive(item.href)
+                          ? "text-primary bg-primary/5"
+                          : "text-foreground/70",
+                      )}
+                    >
+                      {item.name}
+                    </Link>
+                  )}
+                </div>
+              ))}
+              <div className="col-span-2 h-px bg-border/60 my-2" />
+              <div className="col-span-2 flex items-center justify-between px-3">
+                <span className="text-xs font-bold text-muted-foreground">
+                  {isHi ? "भाषा बदलें:" : "Language:"}
+                </span>
+                <div className="flex gap-2">
+                  <Button
+                    size="sm"
+                    variant={language === "hi" ? "default" : "outline"}
+                    onClick={() => setLanguage("hi")}
+                    className="h-7 text-[10px] font-bold rounded-md px-3"
+                  >
+                    हिंदी
+                  </Button>
+                  <Button
+                    size="sm"
+                    variant={language === "en" ? "default" : "outline"}
+                    onClick={() => setLanguage("en")}
+                    className="h-7 text-[10px] font-bold rounded-md px-3"
+                  >
+                    English
+                  </Button>
+                </div>
               </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </div>
   );
 }

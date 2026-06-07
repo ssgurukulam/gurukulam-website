@@ -1,30 +1,47 @@
 {
-  "image": "https://res.cloudinary.com/dgzi1ruvs/image/upload/c_crop,g_north_west,h_833,w_931,y_202/intro_wq1nms.jpg",
+  "image": "https://res.cloudinary.com/dgzi1ruvs/image/upload/v1780139977/banner_with_students_axuv4u.jpg",
   "tagline": {
-    "en": "Our Heritage",
-    "hi": "हमारी धरोहर"
+    "en": "Our Vision",
+    "hi": "हमारा उद्देश्य"
   },
   "headingStart": {
-    "en": "A Sacred Space for",
-    "hi": "समग्र शिक्षा हेतु"
+    "en": "360° Comprehensive Human Development Center",
+    "hi": "विद्यार्थियों का सर्वांगीण विकास एवं"
   },
   "headingAccent": {
-    "en": "Holistic Learning",
-    "hi": "एक पावन परिसर"
+    "en": "Bridging Modern Innovation with Cultural Values",
+    "hi": "राष्ट्र-निर्माण हेतु चरित्र निर्माण केंद्र"
   },
   "paragraphs": [
     {
-      "en": "Established in 2025, Shunya Shikhar Gurukulam balances timeless Vedic wisdom with cutting-edge modern technology. Located in the peaceful foothills of Pachna Dam, Karauli, our campus shapes characters through disciplined living, meditation, coding, and physical combat mastery.",
-      "hi": "2025 में स्थापित शून्य शिखर गुरुकुलम, शाश्वत वैदिक ज्ञान और अत्याधुनिक आधुनिक तकनीक का संतुलित मिश्रण प्रस्तुत करता है। करौली स्थित पचना बांध की शांत तलहटी में बसा हमारा परिसर, अनुशासित जीवन, ध्यान, कोडिंग और शारीरिक युद्ध कौशल के माध्यम से व्यक्तित्व निर्माण में योगदान देता है।"
+      "en": "Out main objective is creation of such an education system through Gurukul where every student becomes physically, mentally, intellectually and spiritually strong. Shoonya Shikhar Gurukulam is a specialized residential educational institute built to solve the modern crisis of single-dimensional academic pressure. Moving beyond basic test percentages, our framework balances full intellectual capacity, psychological grounding, and practical capability in a secure, non-commercial environment.",
+      "hi": "हमारा मुख्य उद्देश्य गुरुकुल के माध्यम से ऐसी शिक्षा व्यवस्था का निर्माण जहाँ प्रत्येक विद्यार्थी शारीरिक, मानसिक, बौद्धिक एवं आध्यात्मिक रूप से सशक्त बने | शून्य शिखर गुरुकुलम् एक पूर्णतः आवासीय शैक्षणिक संस्थान है, जिसका मुख्य उद्देश्य विद्यार्थियों को केवल किताबी ज्ञान देना नहीं, बल्कि उनका 360° मानसिक, शारीरिक और बौद्धिक विकास करना है। यह संस्थान पारंपरिक नैतिक मूल्यों को आधुनिक विज्ञान के साथ जोड़कर एक सुरक्षित एवं अनुशासित वातावरण प्रदान करता है।"
+    },
+    {
+      "en": "Our state-aligned curriculum ensures students learn regular academic courses alongside computer programming, advanced technology literacy, classical self-defense martial arts, and daily meditation routines to build absolute focus and elite life skills.",
+      "hi": "यहाँ सामान्य विद्यालयी पाठ्यक्रम के साथ-साथ उच्च-स्तरीय कंप्यूटर शिक्षा, कोडिंग, पारंपरिक मार्शल आर्ट (आत्मरक्षा प्रणाली) और दैनिक ध्यान-साधना का अनिवार्य प्रशिक्षण दिया जाता है, जिससे विद्यार्थियों में एकाग्रता, नेतृत्व क्षमता और आत्मनिर्भरता की भावना जाग्रत होती है।"
     }
   ],
   "features": [
     {
-      "title": { "en": "Residential", "hi": "आवासीय परिसर" },
-      "desc": {
-        "en": "Traditional Gurukul living",
-        "hi": "पारंपरिक गुरुकुल जीवनशैली"
-      }
+      "icon": "computer",
+      "title": { "en": "Modern Computer Education", "hi": "अत्याधुनिक कंप्यूटर विज्ञान एवं तकनीकी" },
+      "desc": { "en": "Comprehensive digital literacy, coding principles, and technological capabilities for the next-generation economy.", "hi": "विद्यार्थियों को डिजिटल युग के अनुकूल बनाने के लिए पूर्ण कंप्यूटर साक्षरता, प्रोग्रामिंग और व्यावहारिक तकनीकी प्रशिक्षण।" }
+    },
+    {
+      "icon": "meditation",
+      "title": { "en": "Mind Management & Meditation", "hi": "मानसिक संतुलन एवं दैनिक ध्यान साधना" },
+      "desc": { "en": "Structured daily contemplative practices to lower anxiety, eliminate academic stress, and maximize focus retention.", "hi": "तनावमुक्त जीवन, मानसिक स्थिरता और तीव्र निर्णय क्षमता विकसित करने के लिए नियमित वैज्ञानिक योग एवं ध्यान पद्धति।" }
+    },
+    {
+      "icon": "sword",
+      "title": { "en": "Classical Martial Arts & Self Defense", "hi": "शारीरिक सौष्ठव एवं पारंपरिक मार्शल आर्ट" },
+      "desc": { "en": "Rigorous protective physical training systems to cultivate unmatched strength, personal posture, and reflex alertness.", "hi": "शारीरिक सुदृढ़ता, विपरीत परिस्थितियों में आत्मरक्षा और आत्म-अनुशासन के लिए अनिवार्य मार्शल आर्ट्स प्रशिक्षण।" }
+    },
+    {
+      "icon": "heart",
+      "title": { "en": "Social Skills & National Identity", "hi": "सामाजिक कौशल, संस्कार एवं राष्ट्रप्रेम" },
+      "desc": { "en": "Fostering leadership capabilities, moral compliance metrics, community accountability, and service-minded character.", "hi": "नैतिक मूल्यों, समाज के प्रति जिम्मेदारी, नेतृत्व क्षमता और देशभक्ति की भावना का समावेश कर आदर्श नागरिक का निर्माण।" }
     }
   ]
 }

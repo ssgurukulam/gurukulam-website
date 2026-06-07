@@ -4,29 +4,46 @@ import Link from "next/link";
 import Image from "next/image";
 import { Heart, Phone, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/components/language-provider"; // 🚀 THE CORE FIX: Hooking up your provider
 import siteData from "@/content/site.json";
 
 const quickLinks = [
-  { name: "About Us", href: "/about" },
-  { name: "Courses", href: "/courses" },
-  { name: "Teachers", href: "/teachers" },
-  { name: "Admissions", href: "/admissions" },
-  { name: "Events", href: "/events" },
-  { name: "Gallery", href: "/gallery" },
+  { name: { en: "About Us", hi: "हमारे बारे में" }, href: "/about" },
+  { name: { en: "Courses", hi: "पाठ्यक्रम" }, href: "/courses" },
+  { name: { en: "Teachers", hi: "आचार्य गण" }, href: "/teachers" },
+  { name: { en: "Admissions", hi: "प्रवेश प्रक्रिया" }, href: "/admissions" },
+  { name: { en: "Events", hi: "गतिविधियाँ" }, href: "/events" },
+  { name: { en: "Gallery", hi: "चित्र दीर्घा" }, href: "/gallery" },
 ];
 
 const courses = [
-  { name: "Meditation", href: "/curriculum#meditation" },
-  { name: "Martial Arts", href: "/curriculum#martial-arts" },
-  { name: "Computer Education", href: "/curriculum#computer-education" },
-  { name: "Spiritual Learning", href: "/curriculum#spiritual-learning" },
+  {
+    name: { en: "Meditation", hi: "ध्यान योग" },
+    href: "/curriculum#meditation",
+  },
+  {
+    name: { en: "Martial Arts", hi: "पारंपरिक युद्धकला" },
+    href: "/curriculum#martial-arts",
+  },
+  {
+    name: { en: "Computer Education", hi: "कंप्यूटर विज्ञान" },
+    href: "/curriculum#computer-education",
+  },
+  {
+    name: { en: "Spiritual Learning", hi: "आध्यात्मिक शिक्षण" },
+    href: "/curriculum#spiritual-learning",
+  },
 ];
 
 export function Footer() {
   const currentYear = new Date().getFullYear().toString();
   const showDonationCTA = false;
 
-  // Exact brand SVG paths configured to match official logo parameters cleanly
+  // 🚀 THE FIX: Dynamically pulled directly from your app language context
+  const { language: clientLang } = useLanguage();
+  const isHi = clientLang === "hi";
+  const langKey = isHi ? "hi" : "en";
+
   const socialChannels = [
     {
       name: "Facebook",
@@ -101,11 +118,12 @@ export function Footer() {
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="text-center md:text-left space-y-1">
                 <h3 className="text-2xl font-semibold text-foreground tracking-tight">
-                  Support Our Mission
+                  {isHi ? "हमारे मिशन का समर्थन करें" : "Support Our Mission"}
                 </h3>
                 <p className="text-muted-foreground text-sm max-w-md leading-relaxed">
-                  Your generous contribution helps us preserve ancient wisdom
-                  and provide quality education to deserving students.
+                  {isHi
+                    ? "आपका अमूल्य योगदान हमें प्राचीन सनातन ज्ञान को संरक्षित करने और योग्य छात्रों को गुणवत्तापूर्ण शिक्षा प्रदान करने में मदद करता है।"
+                    : "Your generous contribution helps us preserve ancient wisdom and provide quality education to deserving students."}
                 </p>
               </div>
               <Link href="/donate">
@@ -114,7 +132,7 @@ export function Footer() {
                   className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2 cursor-pointer shadow-xs transition-all"
                 >
                   <Heart className="w-5 h-5" />
-                  Make a Donation
+                  {isHi ? "दान करें" : "Make a Donation"}
                 </Button>
               </Link>
             </div>
@@ -139,18 +157,17 @@ export function Footer() {
               </div>
               <div>
                 <h1 className="text-base font-bold text-foreground leading-tight tracking-tight">
-                  {siteData.name.en}
+                  {siteData.name[langKey]}
                 </h1>
                 <p className="text-[10px] text-primary tracking-widest uppercase font-semibold">
-                  Gurukulam
+                  {isHi ? "गुरुकुलम्" : "Gurukulam"}
                 </p>
               </div>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed text-pretty">
-              {siteData.description.en}
+              {siteData.description[langKey]}
             </p>
 
-            {/* Rendered SVG Channels Grid */}
             <div className="flex gap-2.5 pt-2">
               {socialChannels.map((channel) => (
                 <a
@@ -170,16 +187,16 @@ export function Footer() {
           {/* Quick Nav Navigation Links */}
           <div>
             <h3 className="text-sm font-bold uppercase tracking-wider text-foreground mb-6">
-              Quick Links
+              {isHi ? "त्वरित लिंक्स" : "Quick Links"}
             </h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
-                <li key={link.name}>
+                <li key={link.href}>
                   <Link
                     href={link.href}
                     className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
                   >
-                    {link.name}
+                    {link.name[langKey]}
                   </Link>
                 </li>
               ))}
@@ -189,16 +206,16 @@ export function Footer() {
           {/* Our Curriculum Anchors */}
           <div>
             <h3 className="text-sm font-bold uppercase tracking-wider text-foreground mb-6">
-              Our Curriculum
+              {isHi ? "हमारा पाठ्यक्रम" : "Our Curriculum"}
             </h3>
             <ul className="space-y-3">
               {courses.map((link) => (
-                <li key={link.name}>
+                <li key={link.href}>
                   <Link
                     href={link.href}
                     className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
                   >
-                    {link.name}
+                    {link.name[langKey]}
                   </Link>
                 </li>
               ))}
@@ -208,7 +225,7 @@ export function Footer() {
           {/* Contact Details & Maps Trigger Tile */}
           <div className="space-y-4">
             <h3 className="text-sm font-bold uppercase tracking-wider text-foreground mb-6">
-              Contact Us
+              {isHi ? "संपर्क करें" : "Contact Us"}
             </h3>
             <ul className="space-y-3.5">
               <li className="flex items-start gap-3">
@@ -219,9 +236,10 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors text-sm leading-relaxed"
                 >
-                  {siteData.location.address.en},
+                  {siteData.location.address[langKey]},
                   <br />
-                  {siteData.location.city.en}, {siteData.location.state.en} -{" "}
+                  {siteData.location.city[langKey]},{" "}
+                  {siteData.location.state[langKey]} -{" "}
                   {siteData.location.pincode}
                 </a>
               </li>
@@ -245,7 +263,6 @@ export function Footer() {
               </li>
             </ul>
 
-            {/* Static Clean Maps Image Thumbnail */}
             <a
               href={siteData.location.mapsLink}
               target="_blank"
@@ -254,7 +271,7 @@ export function Footer() {
             >
               <Image
                 src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=400&q=80"
-                alt="Hindaun Rajasthan Location Preview"
+                alt="Location Preview"
                 fill
                 sizes="280px"
                 className="object-cover opacity-75 group-hover:scale-103 transition-transform duration-500"
@@ -263,7 +280,7 @@ export function Footer() {
               <div className="absolute inset-0 flex items-center justify-center p-2">
                 <span className="bg-background/95 backdrop-blur-xs px-2.5 py-1.5 rounded-xl text-[11px] font-semibold text-muted-foreground group-hover:text-primary transition-colors flex items-center gap-1.5 shadow-xs border border-border/20">
                   <MapPin className="w-3 h-3 text-primary" />
-                  Open Google Maps
+                  {isHi ? "गूगल मैप्स खोलें" : "Open Google Maps"}
                 </span>
               </div>
             </a>
@@ -276,20 +293,21 @@ export function Footer() {
         <div className="container mx-auto px-4 py-6 max-w-7xl">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-muted-foreground text-xs text-center sm:text-left">
-              &copy; {currentYear} {siteData.name.en}. All rights reserved.
+              &copy; {currentYear} {siteData.name[langKey]}.{" "}
+              {isHi ? "सर्वाधिकार सुरक्षित।" : "All rights reserved."}
             </p>
             <div className="flex gap-6">
               <Link
                 href="/privacy"
                 className="text-muted-foreground hover:text-primary transition-colors text-xs font-medium"
               >
-                Privacy Policy
+                {isHi ? "गोपनीयता नीति" : "Privacy Policy"}
               </Link>
               <Link
                 href="/terms"
                 className="text-muted-foreground hover:text-primary transition-colors text-xs font-medium"
               >
-                Terms of Service
+                {isHi ? "सेवा की शर्तें" : "Terms of Service"}
               </Link>
             </div>
           </div>
